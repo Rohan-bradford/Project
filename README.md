@@ -1,30 +1,30 @@
 # Enterprise Pro Project
 
-P4: Database Management System for Historical Records
+P4. Database Management System for Historical Records
 
-This project focuses on the design and implementation of a database management system for storing and retrieving historical research material held across multiple locations. The system is intended to improve accessibility and visibility of archival resources for researchers and historians.
+This project involves the creation of a database management system to store and retrieve research material held in more than one location, making it accessible and visible to researchers and historians.
 
-The application is built using HTML and CSS with two SQL databases, both accessible through a web browser. Certain text elements are hyperlinked to an organised Images directory, allowing users to navigate directly to related archival materials. Several existing projects are also adapted to integrate with this system.
+The project requires an HTML/CSS application with two SQL databases that are accessible through a web browser. Some text elements will require hyperlinks to an Images folder. Several additional projects will also need to be adapted to use this application.
 
-Once the initial design is confirmed to be fully functional, the project requires modifications to headers and layout so the design can be reused for multiple future projects. The process for making these changes is clearly documented in a dedicated instruction manual.
+Once the initial design is confirmed to be functional, the completed project will require modifications to headers so that the design can be reused for multiple projects. The process for making these changes must be clearly documented in an instruction manual.
 
-Project Aims
+Aim of the Project
 
-The key objectives of this project are:
+The aim of the project is to:
 
-To create two searchable SQL databases:
+Create two searchable SQL databases to store:
 
-One storing information about staff members who worked at the school
+Information on staff who worked at the school
 
-One storing information about historical sources available for viewing within the application
+Information on sources that are available for viewing within the application
 
-To ensure the application automatically opens to Page 1 in a web browser each time it is installed or launched
+Ensure the application automatically opens to Page 1 in a browser each time it is installed or launched
 
-To develop a total of 25 interconnected pages
+Develop a total of 25 pages
 
-To link selected text elements and page numbers within tables to the appropriate sections of the Images folder using hyperlinks
+Link selected text and page numbers within tables to the appropriate sections of the Images folder using hyperlinks
 
-To structure the Images folder into multiple sub-directories for efficiency, for example:
+Organise the Images folder into several subdirectories for efficiency, for example:
 
 Books
 
@@ -34,12 +34,16 @@ Images
 
 Logbooks
 
-To ensure all HTML and CSS files include line numbers and clear annotations, allowing the code to be easily adapted for other projects
+Ensure all HTML and CSS code:
 
-To produce a comprehensive instruction manual explaining:
+Includes line numbers
+
+Is clearly annotated to allow easy adaptation for other projects
+
+Is documented in the instruction manual
+
+Provide a comprehensive instruction manual explaining:
 
 Where headers can be modified
 
 How code can be safely adapted
-
-How the completed project can be reused for other applications
