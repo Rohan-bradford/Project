@@ -1,1 +1,110 @@
+----------------------------------------------------------------------
+Week 4 – Meeting Minutes
 
+Date: Week 4
+
+Participants:
+Ewa Rapucha
+Narissa Swandika
+Adam Jarmouni
+Onyedikachi Valentine Ukwu
+Japmansingh Amanpreetsingh Modi
+Abdullah Sarfraz
+Rohan Rohan
+
+Achievements:
+
+Reviewed Marshfield School system specification.
+
+Set up GitHub repository and project folder structure.
+
+Initial Flask project created.
+
+Base layout structure prepared.
+
+Documentation work started collectively.
+
+Tasks for Next Week:
+Member	Task
+Ewa Rapucha	Create page templates for page1 and page1a
+Narissa Swandika	Develop page2 template
+Adam Jarmouni	Develop page3 template
+Onyedikachi Valentine Ukwu	Begin development of Marshfield subpages
+Japmansingh Amanpreetsingh Modi	Implement base template layout and CSS
+Abdullah Sarfraz	Start remaining Marshfield subpages
+Rohan Rohan	Implement Flask backend in app.py
+
+----------------------------------------------------------------------
+Week 5 – Meeting Minutes
+
+Date: Week 5
+
+Achievements:
+
+Core templates for page1, page1a, page2 and page3 created.
+
+Backend routing implemented for main pages.
+
+Base layout applied across templates.
+
+CSS styling started.
+
+Tasks for Next Week:
+Member	Task
+Ewa Rapucha	Create Marshfield subpages page4a and page4b
+Narissa Swandika	Create Marshfield subpages page4c and page4d
+Adam Jarmouni	Create page3a admission register page
+Onyedikachi Valentine Ukwu	Create page4h and page4i
+Japmansingh Amanpreetsingh Modi	Improve navigation layout
+Abdullah Sarfraz	Create page4n and page4o
+Rohan Rohan	Connect routes for new pages
+
+----------------------------------------------------------------------
+Week 6 – Meeting Minutes
+
+Date: Week 6
+
+Achievements:
+
+Several Marshfield child pages created.
+
+Admission register page implemented.
+
+Navigation structure improved.
+
+Backend successfully loads templates.
+
+Tasks for Next Week:
+Member	Task
+Ewa Rapucha	Complete pages page4a and page4b
+Narissa Swandika	Complete pages page4c and page4d
+Adam Jarmouni	Create pages page4f and page4g
+Onyedikachi Valentine Ukwu	Create pages page4j and page4k
+Japmansingh Amanpreetsingh Modi	Improve styling and base template
+Abdullah Sarfraz	Create pages page4p and page4q
+Rohan Rohan	Integrate navigation with backend
+
+----------------------------------------------------------------------
+Week 7 – Meeting Minutes
+
+Date: Week 7
+
+Achievements:
+
+Most Marshfield pages completed.
+
+Navigation buttons implemented.
+
+Links to historical documents tested.
+
+Layout consistency improved.
+
+Tasks for Next Week:
+Member	Task
+Ewa Rapucha	Review page1 and page1a
+Narissa Swandika	Review page2 and page4c
+Adam Jarmouni	Verify page3 and page3a
+Onyedikachi Valentine Ukwu	Verify page4h–page4k
+Japmansingh Amanpreetsingh Modi	Improve styling
+Abdullah Sarfraz	Verify page4n–page4q
+Rohan Rohan	Debug backend routes
