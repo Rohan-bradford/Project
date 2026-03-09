@@ -1,0 +1,115 @@
+<!-- File: page5.html -->
+<!-- This page template holds the staff database search and add record page. -->
+{% extends "base.html" %}
+{% block content %}
+<div class="content-grid">
+  <section class="panel db-panel" style="grid-column: 1 / -1;">
+    <h2 class="db-title">Staff Database - School Staff Records</h2>
+
+    {% if status == "added" %}
+    <p class="status-ok">Staff record added successfully.</p>
+    {% elif status == "missing" %}
+    <p class="status-warn">School Name is required to add a staff record.</p>
+    {% endif %}
+
+    <form method="get" action="{{ url_for('render_page', page='page5') }}" class="search-panel">
+      <h3>Search Staff Records</h3>
+      <div class="form-row">
+        <div class="field">
+          <label>School Name</label>
+          <select name="school_name">
+            <option value="">All Schools</option>
+            {% for s in schools %}
+            <option value="{{ s }}" {% if filters.school_name == s %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label>Department</label>
+          <select name="dept">
+            <option value="">All Departments</option>
+            {% for d in depts %}
+            <option value="{{ d }}" {% if filters.dept == d %}selected{% endif %}>{{ d }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" name="last_name" placeholder="e.g. Smith" value="{{ filters.last_name }}">
+        </div>
+        <div class="field">
+          <label>Position</label>
+          <select name="position">
+            <option value="">All Positions</option>
+            {% for p in positions %}
+            <option value="{{ p }}" {% if filters.position == p %}selected{% endif %}>{{ p }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label>Start Year</label>
+          <input type="number" name="start_year" placeholder="e.g. 1910" value="{{ filters.start_year }}">
+        </div>
+      </div>
+      <div class="search-actions">
+        <button type="submit" class="btn-primary">Search</button>
+        <a href="{{ url_for('render_page', page='page5') }}" class="btn-muted">Clear</a>
+      </div>
+    </form>
+
+    <div class="db-toolbar">
+      <button type="button" class="btn-add" onclick="openStaffModal()">+ Add New Staff Record</button>
+      <span>Showing {{ rows|length }} record(s)</span>
+    </div>
+
+    <table class="db-table">
+      <thead>
+        <tr>
+          <th>School name</th><th>Dept</th><th>Title</th><th>Last Name</th><th>First Name</th><th>Position</th><th>Address</th><th>Start year</th><th>Left year</th><th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in rows %}
+        <tr>
+          <td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td><td>{{ r[4] }}</td><td>{{ r[5] }}</td><td>{{ r[6] }}</td><td>{{ r[7] }}</td><td>{{ r[8] }}</td><td>{{ r[9] }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="10">No records found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div id="staffModal" class="modal-backdrop" onclick="closeStaffModal(event)">
+      <div class="modal-card">
+        <h3>Add New Staff Record</h3>
+        <form method="post" action="{{ url_for('add_staff_record') }}" class="modal-form">
+          <div class="field"><label>School Name</label><input type="text" name="school_name" required></div>
+          <div class="field"><label>Department</label><input type="text" name="dept"></div>
+          <div class="field"><label>Title</label><input type="text" name="title"></div>
+          <div class="field"><label>Last Name</label><input type="text" name="last_name"></div>
+          <div class="field"><label>First Name</label><input type="text" name="first_name"></div>
+          <div class="field"><label>Position</label><input type="text" name="position"></div>
+          <div class="field"><label>Address</label><input type="text" name="address"></div>
+          <div class="field"><label>Start Year</label><input type="text" name="start_year"></div>
+          <div class="field"><label>Left Year</label><input type="text" name="left_year"></div>
+          <div class="field"><label>Notes</label><textarea name="notes" rows="3"></textarea></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-muted" onclick="closeStaffModal()">Cancel</button>
+            <button type="submit" class="btn-save">Save Record</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  function openStaffModal() {
+    document.getElementById("staffModal").classList.add("show");
+  }
+  function closeStaffModal(evt) {
+    if (!evt || evt.target.id === "staffModal") {
+      document.getElementById("staffModal").classList.remove("show");
+    }
+  }
+</script>
+{% endblock %}

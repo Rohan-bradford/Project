@@ -1,0 +1,116 @@
+<!-- File: page6.html -->
+<!-- This page template holds the sources database search and add record page. -->
+{% extends "base.html" %}
+{% block content %}
+<div class="content-grid">
+  <section class="panel db-panel" style="grid-column: 1 / -1;">
+    <h2 class="db-title">Sources Database - Available Historical Sources</h2>
+
+    {% if status == "added" %}
+    <p class="status-ok">Source record added successfully.</p>
+    {% elif status == "missing" %}
+    <p class="status-warn">Source Name is required to add a source record.</p>
+    {% endif %}
+
+    <form method="get" action="{{ url_for('render_page', page='page6') }}" class="search-panel">
+      <h3>Search Sources</h3>
+      <div class="form-row">
+        <div class="field">
+          <label>School</label>
+          <select name="school">
+            <option value="">All Schools</option>
+            {% for s in schools %}
+            <option value="{{ s }}" {% if filters.school == s %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label>Source Type</label>
+          <select name="source_type">
+            <option value="">All Source Types</option>
+            {% for t in source_types %}
+            <option value="{{ t }}" {% if filters.source_type == t %}selected{% endif %}>{{ t }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="search-actions">
+        <button type="submit" class="btn-primary">Search</button>
+        <a href="{{ url_for('render_page', page='page6') }}" class="btn-muted">Clear</a>
+      </div>
+    </form>
+
+    <div class="db-toolbar">
+      <button type="button" class="btn-add" onclick="openSourceModal()">+ Add New Source Record</button>
+      <span>Showing {{ rows|length }} source(s)</span>
+    </div>
+
+    <table class="db-table">
+      <thead>
+        <tr>
+          <th>Source</th><th>Source type</th><th>School</th><th>Department</th><th>Notes</th><th>Hyperlink</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in rows %}
+        <tr>
+          <td>
+            {% if r[5] %}
+            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">{{ r[0] }}</a>
+            {% else %}
+            {{ r[0] }}
+            {% endif %}
+          </td>
+          <td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td><td>{{ r[4] }}</td>
+          <td>
+            {% if r[5] %}
+            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">Open</a>
+            {% else %}
+            No file linked yet
+            {% endif %}
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">No records found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div id="sourceModal" class="modal-backdrop" onclick="closeSourceModal(event)">
+      <div class="modal-card">
+        <h3>Add New Source Record</h3>
+        <form method="post" action="{{ url_for('add_source_record') }}" class="modal-form">
+          <div class="field"><label>Source Name</label><input type="text" name="source" required></div>
+          <div class="field">
+            <label>Source Type</label>
+            <select name="source_type">
+              <option value="">Select type...</option>
+              {% for t in source_types %}
+              <option value="{{ t }}">{{ t }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="field"><label>School</label><input type="text" name="school"></div>
+          <div class="field"><label>Department</label><input type="text" name="department"></div>
+          <div class="field"><label>Notes</label><textarea name="notes" rows="3"></textarea></div>
+          <div class="field"><label>File Path / Hyperlink</label><input type="text" name="hyperlink" placeholder="Images/Log books/Infant_1877 -1905.pdf"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-muted" onclick="closeSourceModal()">Cancel</button>
+            <button type="submit" class="btn-save">Save Record</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  function openSourceModal() {
+    document.getElementById("sourceModal").classList.add("show");
+  }
+  function closeSourceModal(evt) {
+    if (!evt || evt.target.id === "sourceModal") {
+      document.getElementById("sourceModal").classList.remove("show");
+    }
+  }
+</script>
+{% endblock %}
