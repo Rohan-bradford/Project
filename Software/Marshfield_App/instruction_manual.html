@@ -1,0 +1,302 @@
+<!doctype html>
+<!-- File: instruction_manual.html -->
+<!-- This is the styled instruction manual for running and maintaining the app. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instruction Manual - Marshfield School History App</title>
+  <style>
+    :root {
+      --navy: #1a2340;
+      --navy-2: #2c3e6b;
+      --gold: #c9a84c;
+      --cream: #f5f0e8;
+      --paper: #fff;
+      --text: #1a1a1a;
+      --warn: #8b1a1a;
+      --ok: #2a6b2a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    .wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    header {
+      background: var(--navy);
+      color: var(--gold);
+      padding: 28px 36px;
+      border-bottom: 4px solid var(--gold);
+    }
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 1.9em;
+      letter-spacing: 0.8px;
+    }
+    header p {
+      margin: 0;
+      color: #ead9ad;
+      font-style: italic;
+    }
+    nav.toc {
+      background: var(--navy-2);
+      padding: 18px 36px;
+      border-bottom: 3px solid var(--gold);
+    }
+    nav.toc h2 {
+      margin: 0 0 10px;
+      font-size: 1.05em;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    nav.toc a {
+      color: #ead9ad;
+      display: block;
+      text-decoration: none;
+      font-size: 0.95em;
+      padding: 2px 0;
+    }
+    nav.toc a:hover {
+      color: var(--gold);
+    }
+    main {
+      padding: 34px 36px 40px;
+    }
+    h2 {
+      margin: 34px 0 14px;
+      color: var(--navy);
+      background: var(--cream);
+      border-left: 5px solid var(--gold);
+      padding: 8px 14px;
+      font-size: 1.25em;
+    }
+    h3 {
+      color: var(--navy-2);
+      margin: 20px 0 8px;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+      font-size: 1.02em;
+    }
+    h4 {
+      color: var(--warn);
+      margin: 16px 0 6px;
+    }
+    code {
+      background: #eee;
+      border-radius: 3px;
+      padding: 2px 5px;
+      color: var(--warn);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.92em;
+    }
+    pre {
+      background: var(--navy);
+      color: #ead9ad;
+      border-radius: 4px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.9em;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+    .note {
+      background: #fff8e8;
+      border-left: 4px solid var(--gold);
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    .warning {
+      background: #fff0f0;
+      border-left: 4px solid var(--warn);
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    .tip {
+      background: #f0f8f0;
+      border-left: 4px solid var(--ok);
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    ul li, ol li {
+      margin-bottom: 6px;
+    }
+    footer {
+      background: var(--navy);
+      color: #ead9ad;
+      text-align: center;
+      border-top: 3px solid var(--gold);
+      padding: 16px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Marshfield School History - Instruction Manual</h1>
+      <p>Run guide, setup requirements, editing steps, and database workflows</p>
+    </header>
+
+    <nav class="toc">
+      <h2>Contents</h2>
+      <a href="#s1">1) What is needed before running</a>
+      <a href="#s2">2) How to run the application</a>
+      <a href="#s3">3) If run fails (quick fixes)</a>
+      <a href="#s4">4) Project structure and purpose</a>
+      <a href="#s5">5) Rebuild or refresh the databases</a>
+      <a href="#s6">6) Editing page text/content</a>
+      <a href="#s7">7) Hyperlinks</a>
+      <a href="#s8">8) Table editing</a>
+      <a href="#s9">9) Layout and style changes</a>
+      <a href="#s10">10) Staff database page</a>
+      <a href="#s11">11) Sources database page</a>
+      <a href="#s12">12) Offline use</a>
+      <a href="#s13">13) Stop the app</a>
+    </nav>
+
+    <main>
+      <h2 id="s1">1) What is needed before running</h2>
+      <h3>Software</h3>
+      <ul>
+        <li>Windows 10/11</li>
+        <li>Python 3.10+ installed (<code>python --version</code>)</li>
+        <li>Internet only for first-time package install (after that it can run offline)</li>
+      </ul>
+
+      <div class="warning">
+        <strong>Important Python note (Windows):</strong> Python is not guaranteed to be preinstalled.
+        Check with <code>python --version</code>. If it fails or opens Microsoft Store, install Python from
+        <code>https://www.python.org/downloads/windows/</code>, tick <strong>Add Python to PATH</strong>,
+        reopen PowerShell, then run <code>python --version</code> again.
+      </div>
+
+      <h3>Project files required</h3>
+      <ul>
+        <li>Full <code>Marshfield_App</code> folder, including <code>app.py</code>, <code>requirements.txt</code>, <code>templates/</code>, <code>static/</code>, <code>Images/</code>, <code>data/</code></li>
+      </ul>
+
+      <div class="note">
+        <strong>Important database note:</strong> If <code>data/staff.db</code> and <code>data/sources.db</code>
+        already exist in the project, the application can run without using <code>init_db.py</code> or
+        <code>import_excel_data.py</code>. Records added through the app are written directly into those
+        existing database files.
+      </div>
+
+      <h2 id="s2">2) How to run the application (exact steps)</h2>
+      <ol>
+        <li>Open <strong>PowerShell as Administrator</strong> and go to the project:
+          <pre><code>cd C:\path\to\Marshfield_App</code></pre>
+        </li>
+        <li>Create and activate virtual environment:
+          <pre><code>python -m venv .venv
+.venv\Scripts\activate</code></pre>
+        </li>
+        <li>Install dependencies:
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>Run app:
+          <pre><code>python -m flask --app app run --debug</code></pre>
+        </li>
+        <li>Open <code>http://127.0.0.1:5000/</code></li>
+      </ol>
+
+      <div class="note">
+        Expected startup behavior: <code>/</code> redirects to <code>/page1</code>.
+      </div>
+
+      <div class="warning">
+        Using <strong>PowerShell as Administrator</strong> from the start helps avoid permission errors while
+        creating the virtual environment, installing packages, or writing to protected folders.
+      </div>
+
+      <h2 id="s3">3) If run fails (quick fixes)</h2>
+      <ul>
+        <li><strong>flask not recognized:</strong> use <code>python -m flask --app app run --debug</code></li>
+        <li><strong>missing package:</strong> run <code>pip install -r requirements.txt</code></li>
+        <li><strong>port in use:</strong> run <code>python -m flask --app app run --debug --port 5001</code></li>
+        <li><strong>permission denied / access denied:</strong> try running PowerShell as Administrator and rerun the command</li>
+      </ul>
+
+      <h2 id="s4">4) Project structure and purpose</h2>
+      <ul>
+        <li><code>app.py</code>: routes, page rendering, DB search/insert logic</li>
+        <li><code>templates/base.html</code>: shared layout</li>
+        <li><code>templates/pages/*.html</code>: all page content</li>
+        <li><code>static/css/styles.css</code>: colors/layout/style</li>
+        <li><code>Images/</code>: linked archive files</li>
+        <li><code>data/staff.db</code>, <code>data/sources.db</code>: databases</li>
+      </ul>
+
+      <h2 id="s5">5) Rebuild or refresh the databases</h2>
+      <pre><code>python init_db.py
+python import_excel_data.py</code></pre>
+      <p>If the database files already exist and the app is working normally, you do not need to run these scripts for everyday use or for adding records through the application interface.</p>
+
+      <h2 id="s6">6) Editing page text/content</h2>
+      <ul>
+        <li>Edit page text in <code>templates/pages/*.html</code></li>
+        <li>Edit shared layout in <code>templates/base.html</code></li>
+        <li>Edit styles in <code>static/css/styles.css</code></li>
+      </ul>
+
+      <h2 id="s7">7) Hyperlinks</h2>
+      <p>Use this format:</p>
+      <pre><code>&lt;a href="/Images/Log%20books/Infant_1877%20-1905.pdf" target="_blank"&gt;1877-1905 Infants&lt;/a&gt;</code></pre>
+
+      <h2 id="s8">8) Table editing</h2>
+      <ol>
+        <li>Open target page template.</li>
+        <li>Copy an existing table row (<code>&lt;tr&gt;...&lt;/tr&gt;</code>).</li>
+        <li>Update label and link.</li>
+      </ol>
+
+      <h2 id="s9">9) Layout and style changes</h2>
+      <ul>
+        <li>Main container: <code>.page</code></li>
+        <li>Banner image: <code>.hero</code></li>
+        <li>Two-column area: <code>.content-grid</code></li>
+        <li>Notable dates panel: <code>aside.panel</code></li>
+      </ul>
+
+      <h2 id="s10">10) Staff database page (Page 5)</h2>
+      <ul>
+        <li>Search by school, dept, last name, position, start year.</li>
+        <li>Use <strong>+ Add New Staff Record</strong> to insert a record.</li>
+        <li>Required field to add: <code>School Name</code>.</li>
+        <li>New staff records are written directly into <code>data/staff.db</code>.</li>
+      </ul>
+
+      <h2 id="s11">11) Sources database page (Page 6)</h2>
+      <ul>
+        <li>Search by school and source type.</li>
+        <li>Use <strong>+ Add New Source Record</strong> to insert a record.</li>
+        <li>Required field to add: <code>Source Name</code>.</li>
+        <li>For file links, enter relative path like <code>Images/...</code>.</li>
+        <li>New source records are written directly into <code>data/sources.db</code>.</li>
+      </ul>
+
+      <h2 id="s12">12) Offline use</h2>
+      <div class="tip">
+        The app runs offline after initial setup, if Python/packages are already installed and all files in <code>Images/</code> are present.
+      </div>
+
+      <h2 id="s13">13) Stop the app</h2>
+      <p>Press <code>Ctrl + C</code> in the PowerShell window running Flask.</p>
+    </main>
+
+    <footer>
+      Marshfield School History - Instruction Manual
+    </footer>
+  </div>
+</body>
+</html>
