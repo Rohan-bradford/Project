@@ -1,0 +1,4 @@
+# File: requirements.txt
+# This file lists the Python packages needed to run the app.
+Flask==3.1.0
+openpyxl==3.1.5
