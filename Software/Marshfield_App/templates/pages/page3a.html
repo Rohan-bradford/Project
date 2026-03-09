@@ -1,13 +1,41 @@
 <!-- File: page3a.html -->
-<!-- This page template holds the Thornton Lane admissions index page. -->
-{% extends "base.html" %}
-{% block content %}
+
+<!-- 
+This template displays the admissions index page for Thornton Lane Board School.
+It allows users to access historical admission register images from 1894 to 1901.
+The page contains links to index images (for searching names alphabetically)
+and links to scanned register pages.
+-->
+
+{% extends "base.html" %} <!-- Inherits layout structure such as header, navigation menu, and footer -->
+
+{% block content %} <!-- Start of the page-specific content -->
+
+<!-- 
+The content-grid class organises the layout into two main areas:
+1. A main section containing the admissions index and page links.
+2. A sidebar with notable historical dates related to the register.
+-->
 <div class="content-grid">
+
+  <!-- Main content section -->
   <section class="panel">
+
+    <!-- Title of the admissions register page -->
     <h2>Thornton Lane Admissions: Jan 1894 - Feb 1901</h2>
+
+    <!-- Short description explaining the purpose of this page -->
     <p>Admissions index and page links for Thornton Lane Board School records.</p>
+
+    <!-- 
+    First panel containing alphabetical index images.
+    These images allow users to locate a student name before opening the register pages.
+    Each link opens the scanned index image in a new browser tab.
+    -->
     <div class="panel">
       <div class="grid-links">
+
+        <!-- Links to scanned index images organised alphabetically -->
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/001Index%20A,B.jpg" target="_blank">Index A to B</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/001Index%20B,C.jpg" target="_blank">Index B to C</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/001Index%20D,E,F,G.jpg" target="_blank">Index D to G</a>
@@ -17,10 +45,20 @@
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/001Index%20R,S.jpg" target="_blank">Index R to S</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/001Index%20T,U,V.jpg" target="_blank">Index T to U</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/001Index%20W,Y.jpg" target="_blank">Index W to Y</a>
+
       </div>
     </div>
+
+    <!-- 
+    Second panel containing links to the actual admission register pages.
+    Each link opens a scanned image of a register page.
+    The page numbers correspond to groups of student admission records.
+    -->
     <div class="panel">
       <div class="grid-links">
+
+        <!-- Links to scanned admission register pages -->
+        <!-- target="_blank" opens the image in a new browser tab -->
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/002Admissions%201%20-%2031.jpg" target="_blank">Page 1</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/002Admissions%2032%20-%2061.jpg" target="_blank">Page 2</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/002Admissions%2062%20-%2092.jpg" target="_blank">Page 3</a>
@@ -31,6 +69,10 @@
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20216%20-%20246.jpg" target="_blank">Page 8</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20247%20-%20277.jpg" target="_blank">Page 9</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20278%20-%20308.jpg" target="_blank">Page 10</a>
+
+        <!-- Additional register pages continue below -->
+        <!-- These links allow users to navigate through the full scanned register -->
+
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20309%20-%20339.jpg" target="_blank">Page 11</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20340%20-%20370.jpg" target="_blank">Page 12</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20371%20-%20401.jpg" target="_blank">Page 13</a>
@@ -54,17 +96,33 @@
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20929%20-%20959.jpg" target="_blank">Page 31</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20960%20-%20990.jpg" target="_blank">Page 32</a>
         <a href="/Images/Admission%20Registers/Thornton_%20Lane_%201894-1901/Admissions%20991%20-%201013.jpg" target="_blank">Page 33</a>
+
       </div>
     </div>
-    <p>When a page from the table above is opened, use previous page, next page and home navigation.</p>
+
+    <!-- Instruction for users on how to navigate once an image page is opened -->
+    <p>
+      When a page from the table above is opened, use previous page, next page 
+      and home navigation.
+    </p>
+
   </section>
+
+  <!-- Sidebar panel containing contextual historical information -->
   <aside class="panel">
+
+    <!-- Sidebar heading -->
     <h2>Notable Dates</h2>
+
+    <!-- List of important dates related to the admission register -->
     <ul>
       <li>1894: Admission register period begins.</li>
       <li>1901: Admission register period ends.</li>
       <li>Index images are linked to speed up name lookup.</li>
     </ul>
+
   </aside>
-</div>
-{% endblock %}
+
+</div> <!-- End of grid layout -->
+
+{% endblock %} <!-- End of page-specific content -->
