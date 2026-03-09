@@ -1,20 +1,85 @@
 <!-- File: page3.html -->
-<!-- This page template holds the Thornton Lane Board School page content. -->
-{% extends "base.html" %}
-{% block content %}
+
+<!-- 
+This template displays the page about Thornton Lane Board School.
+It uses the base.html layout and fills the "content" block with
+historical information, links to sources, and notable education dates.
+-->
+
+{% extends "base.html" %} <!-- Inherits the general layout (header, navigation, footer) from base.html -->
+
+{% block content %} <!-- Start of the page-specific content -->
+
+<!-- 
+Content is organised using a grid layout.
+The grid contains:
+1. A main section with historical text and sources.
+2. A sidebar with notable dates in education history.
+-->
 <div class="content-grid">
+
+  <!-- Main content panel containing the historical description -->
   <section class="panel">
+
+    <!-- Page title -->
     <h2>Thornton Lane Board School</h2>
+
+    <!-- Introductory text explaining that sources are listed below -->
     <p>Links to sources available for this school are at the end of this text.</p>
-    <p>The school opened on Mon 5 Nov 1886. The day started with the children marching from their former school to their new school a few hundred metres away. What would they have thought about their new school. Windows in all classrooms, none of them were broken like in their previous school, lots of space in the playground instead of a very small shared playground, freshly painted walls instead of peeling plaster and individual classrooms instead of everyone in one room and new desks.</p>
+
+    <!-- Historical description of the school opening -->
+    <p>
+      The school opened on Mon 5 Nov 1886. The day started with the children marching 
+      from their former school to their new school a few hundred metres away. 
+      What would they have thought about their new school. Windows in all classrooms, 
+      none of them were broken like in their previous school, lots of space in the 
+      playground instead of a very small shared playground, freshly painted walls 
+      instead of peeling plaster and individual classrooms instead of everyone 
+      in one room and new desks.
+    </p>
+
+    <!-- Section title for historical references -->
     <p><strong>Sources</strong></p>
-    <p>Thornton Lane Board School Logbook: <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=75" target="_blank">Infant_1877-1905</a> (pages 75 to 207 cover this school) and <a href="/Images/Log%20books/Junior_1877%20-%201910.pdf#page=81" target="_blank">Junior_1877-1910</a> (pages 81 to 180 cover this school).</p>
-    <p>Admission Register: <a href="/page3a">Admission_Jan 1894-Feb 1901</a>.</p>
-    <p>Newspapers: 24/4/1884 Erection of new school, 25/9/1884 Dispute with Church members of School Board.</p>
+
+    <!-- 
+    Links to historical logbooks stored as PDF files.
+    The #page parameter opens the PDF at a specific page.
+    target="_blank" ensures the PDF opens in a new browser tab.
+    -->
+    <p>
+      Thornton Lane Board School Logbook:
+      <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=75" target="_blank">
+        Infant_1877-1905
+      </a>
+      (pages 75 to 207 cover this school)
+      and
+      <a href="/Images/Log%20books/Junior_1877%20-%201910.pdf#page=81" target="_blank">
+        Junior_1877-1910
+      </a>
+      (pages 81 to 180 cover this school).
+    </p>
+
+    <!-- Link to another internal page showing admission register data -->
+    <p>
+      Admission Register:
+      <a href="/page3a">Admission_Jan 1894-Feb 1901</a>.
+    </p>
+
+    <!-- Historical newspaper references -->
+    <p>
+      Newspapers: 24/4/1884 Erection of new school,
+      25/9/1884 Dispute with Church members of School Board.
+    </p>
 
   </section>
+
+  <!-- Sidebar panel showing important educational policy changes -->
   <aside class="panel">
+
+    <!-- Sidebar title -->
     <h2>Notable Dates</h2>
+
+    <!-- List of important historical education milestones -->
     <ul>
       <li>1886: Leaving school allowed if they had attained standard 6.</li>
       <li>1886: Part time schooling allowed if they had attained standard 3.</li>
@@ -23,6 +88,9 @@
       <li>1899: Minimum leaving age raised to 12.</li>
       <li>1899: Compulsory education for physically impaired children.</li>
     </ul>
+
   </aside>
-</div>
-{% endblock %}
+
+</div> <!-- End of content grid -->
+
+{% endblock %} <!-- End of page-specific content -->
