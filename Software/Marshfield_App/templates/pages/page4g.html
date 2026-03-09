@@ -1,37 +1,101 @@
 <!-- File: page4g.html -->
-<!-- This page template holds the infant admission register 1954 to 1965 page. -->
+
+<!-- 
+This template displays the Infant Admission Register page covering the period
+from 1954 to 1965. The page provides links to alphabetical index sections and
+links to scanned register pages containing student admission records.
+-->
+
 {% extends "base.html" %}
+<!-- 
+The page extends base.html so it inherits the common website structure,
+including the header, navigation menu, and footer.
+-->
+
 {% block content %}
+<!-- Start of the page-specific content -->
+
 <div class="content-grid">
+<!-- 
+The content-grid layout divides the page into two sections:
+1. Main content area containing register links
+2. Sidebar containing contextual information
+-->
+
   <section class="panel">
+  <!-- Main content panel -->
+
+    <!-- Main heading showing the register period -->
     <h2>Admission Register (Infants) 1954 - 1965</h2>
     
-<p>Admission Register (Infants) 1954 - 1965</p>
-<div class="panel">
-  <div class="grid-links">
-    <a href="#">Index A B</a>
-<a href="#">Index B C</a>
-<a href="#">Index D E F G</a>
-<a href="#">Index H I J</a>
-<a href="#">Index K L M</a>
-<a href="#">Index M N O P Q</a>
-<a href="#">Index R S</a>
-<a href="#">Index S T U V</a>
-<a href="#">Index W Y Z</a>
-<a href="#">1954 (1)</a>
-  </div>
-</div>
-<p>Navigation for linked source pages: previous page, next page, and home (this page).</p>
+    <!-- Short description of the admission register -->
+    <p>Admission Register (Infants) 1954 - 1965</p>
+
+    <!-- 
+    Panel containing index and register page links.
+    The grid-links class organises the links into a grid format
+    to make navigation easier for users.
+    -->
+    <div class="panel">
+      <div class="grid-links">
+
+        <!-- 
+        Alphabetical index links used to locate student names quickly.
+        Each index corresponds to letters of surnames in the register.
+        The # symbol indicates placeholder links which can later
+        be replaced with actual image or document links.
+        -->
+
+        <a href="#">Index A B</a>
+        <a href="#">Index B C</a>
+        <a href="#">Index D E F G</a>
+        <a href="#">Index H I J</a>
+        <a href="#">Index K L M</a>
+        <a href="#">Index M N O P Q</a>
+        <a href="#">Index R S</a>
+        <a href="#">Index S T U V</a>
+        <a href="#">Index W Y Z</a>
+
+        <!-- 
+        Link to the first scanned page of the 1954 admission register.
+        Additional pages could be added in the same grid as more
+        scanned records become available.
+        -->
+        <a href="#">1954 (1)</a>
+
+      </div>
+    </div>
+
+    <!-- 
+    Instructions explaining how users can navigate once they open
+    a linked source page (for example using previous and next controls).
+    -->
+    <p>
+      Navigation for linked source pages: previous page, next page, and home (this page).
+    </p>
 
   </section>
+
+  <!-- Sidebar section containing contextual information -->
   <aside class="panel">
+
+    <!-- Sidebar heading -->
     <h2>Notable Dates</h2>
+
+    <!-- 
+    List for historical events related to the register period.
+    Currently empty but can be filled later with relevant events
+    from 1954 to 1965.
+    -->
     <ul>
       
       
       
     </ul>
-  </aside>
-</div>
-{% endblock %}
 
+  </aside>
+
+</div>
+
+{% endblock %}
+<!-- End of page-specific content -->
