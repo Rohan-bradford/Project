@@ -1,6 +1,8 @@
 Date: Week 4
+------------
 
 Participants:
+-------------
 Ewa Rapucha
 Narissa Swandika
 Adam Jarmouni
@@ -11,6 +13,7 @@ Rohan Rohan
 
 -------------------------------------------
 Achievements:
+------------
 
 Reviewed Marshfield School system specification.
 
@@ -21,9 +24,13 @@ Initial Flask project created.
 Base layout structure prepared.
 
 Documentation work started collectively.
+
 -------------------------------------------
 Tasks for Next Week:
+------------
+
 Member	Task:
+-------
 
 Ewa Rapucha	Create page templates for page1 and page1a
 Narissa Swandika	Develop page2 template
