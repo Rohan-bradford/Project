@@ -4,11 +4,17 @@ Date: Week 4
 Participants:
 -------------
 Ewa Rapucha
+
 Narissa Swandika
+
 Adam Jarmouni
+
 Onyedikachi Valentine Ukwu
+
 Japmansingh Amanpreetsingh Modi
+
 Abdullah Sarfraz
+
 Rohan Rohan
 
 -------------------------------------------
