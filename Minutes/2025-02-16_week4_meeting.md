@@ -33,9 +33,16 @@ Member	Task:
 -------
 
 Ewa Rapucha	Create page templates for page1 and page1a
+
 Narissa Swandika	Develop page2 template
+
 Adam Jarmouni	Develop page3 template
+
 Onyedikachi Valentine Ukwu	Begin development of Marshfield subpages
+
 Japmansingh Amanpreetsingh Modi	Implement base template layout and CSS
+
 Abdullah Sarfraz	Start remaining Marshfield subpages
+
 Rohan Rohan	Implement Flask backend in app.py and create sources.db and staff.db
+
