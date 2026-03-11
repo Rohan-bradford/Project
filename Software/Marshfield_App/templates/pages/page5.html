@@ -2,87 +2,205 @@
 <!-- This page template holds the staff database search and add record page. -->
 {% extends "base.html" %}
 {% block content %}
+<!-- Main grid container for the page content -->
 <div class="content-grid">
+
+  <!-- Section that holds the staff database userinterface -->
+  <!-- grid-column: 1 / -1 make the width long to cover the whole page -->
   <section class="panel db-panel" style="grid-column: 1 / -1;">
+
+    <!-- title of the staff database page -->
     <h2 class="db-title">Staff Database - School Staff Records</h2>
 
+    <!-- a message is displayed after adding a record -->
     {% if status == "added" %}
+    <!-- Success message display when a staff record is added -->
     <p class="status-ok">Staff record added successfully.</p>
-    {% elif status == "missing" %}
+
+    {% elif status == "missing" %} <!-- this is jinja template format FYI -->
+    <!-- Warning message when required data (school name) is missing -->
     <p class="status-warn">School Name is required to add a staff record.</p>
     {% endif %}
 
+    <!-- Search form used to filter staff records -->
+    <!-- method GET is used so search filters appear in the URL -->
     <form method="get" action="{{ url_for('render_page', page='page5') }}" class="search-panel">
+
       <h3>Search Staff Records</h3>
+
+      <!-- Container for form input fields -->
       <div class="form-row">
+
+        <!-- Filter by school name -->
         <div class="field">
           <label>School Name</label>
           <select name="school_name">
+
+            <!-- Default option to show all schools -->
             <option value="">All Schools</option>
+
+            <!-- Loop through all schools from backend -->
             {% for s in schools %}
-            <option value="{{ s }}" {% if filters.school_name == s %}selected{% endif %}>{{ s }}</option>
+
+            <!-- If filter already selected, keep it selected -->
+            <option value="{{ s }}" {% if filters.school_name == s %}selected{% endif %}>
+              {{ s }}
+            </option>
+
             {% endfor %}
           </select>
         </div>
+
+        <!-- Filter by department -->
         <div class="field">
           <label>Department</label>
           <select name="dept">
+
             <option value="">All Departments</option>
+
+            <!-- Loop through department list -->
             {% for d in depts %}
-            <option value="{{ d }}" {% if filters.dept == d %}selected{% endif %}>{{ d }}</option>
+
+            <!-- Preserve selected department after search -->
+            <option value="{{ d }}" {% if filters.dept == d %}selected{% endif %}>
+              {{ d }}
+            </option>
+
             {% endfor %}
           </select>
         </div>
+
+        <!-- Search by last name -->
         <div class="field">
           <label>Last Name</label>
-          <input type="text" name="last_name" placeholder="e.g. Smith" value="{{ filters.last_name }}">
+
+          <!-- Text input with placeholder example -->
+          <input type="text" name="last_name" placeholder="e.g. Smith"
+                 value="{{ filters.last_name }}">
         </div>
+
+        <!-- Filter by position -->
         <div class="field">
           <label>Position</label>
           <select name="position">
+
             <option value="">All Positions</option>
+
+            <!-- Loop through all position options -->
             {% for p in positions %}
-            <option value="{{ p }}" {% if filters.position == p %}selected{% endif %}>{{ p }}</option>
+
+            <!-- Keep selected position if user searched before -->
+            <option value="{{ p }}" {% if filters.position == p %}selected{% endif %}>
+              {{ p }}
+            </option>
+
             {% endfor %}
           </select>
         </div>
+
+        <!-- Filter by starting year -->
         <div class="field">
           <label>Start Year</label>
-          <input type="number" name="start_year" placeholder="e.g. 1910" value="{{ filters.start_year }}">
+
+          <!-- Numeric input for start year -->
+          <input type="number" name="start_year" placeholder="e.g. 1910"
+                 value="{{ filters.start_year }}">
         </div>
+
       </div>
+
+      <!-- Buttons used for search and clearing filters -->
       <div class="search-actions">
+
+        <!-- Submit search request -->
         <button type="submit" class="btn-primary">Search</button>
+
+        <!-- Clear filters by reloading page -->
         <a href="{{ url_for('render_page', page='page5') }}" class="btn-muted">Clear</a>
+
       </div>
+
     </form>
 
+
+    <!-- Toolbar above the database table -->
     <div class="db-toolbar">
-      <button type="button" class="btn-add" onclick="openStaffModal()">+ Add New Staff Record</button>
+
+      <!-- Button that opens modal for adding new staff -->
+      <button type="button" class="btn-add" onclick="openStaffModal()">
+        + Add New Staff Record
+      </button>
+
+      <!-- Shows number of results currently displayed -->
       <span>Showing {{ rows|length }} record(s)</span>
+
     </div>
 
+
+    <!-- Staff records table -->
     <table class="db-table">
+
+      <!-- Table header -->
       <thead>
         <tr>
-          <th>School name</th><th>Dept</th><th>Title</th><th>Last Name</th><th>First Name</th><th>Position</th><th>Address</th><th>Start year</th><th>Left year</th><th>Notes</th>
+          <th>School name</th>
+          <th>Dept</th>
+          <th>Title</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Position</th>
+          <th>Address</th>
+          <th>Start year</th>
+          <th>Left year</th>
+          <th>Notes</th>
         </tr>
       </thead>
+
       <tbody>
+
+        <!-- Loop through rows returned from backend -->
         {% for r in rows %}
+
         <tr>
-          <td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td><td>{{ r[4] }}</td><td>{{ r[5] }}</td><td>{{ r[6] }}</td><td>{{ r[7] }}</td><td>{{ r[8] }}</td><td>{{ r[9] }}</td>
+          <!-- Each index corresponds to a column from database -->
+          <td>{{ r[0] }}</td> <!-- School name -->
+          <td>{{ r[1] }}</td> <!-- Department -->
+          <td>{{ r[2] }}</td> <!-- Title -->
+          <td>{{ r[3] }}</td> <!-- Last name -->
+          <td>{{ r[4] }}</td> <!-- First name -->
+          <td>{{ r[5] }}</td> <!-- Position -->
+          <td>{{ r[6] }}</td> <!-- Address -->
+          <td>{{ r[7] }}</td> <!-- Start year -->
+          <td>{{ r[8] }}</td> <!-- Left year -->
+          <td>{{ r[9] }}</td> <!-- Notes -->
         </tr>
+
         {% else %}
-        <tr><td colspan="10">No records found.</td></tr>
+
+        <!-- Displayed if no records match the search -->
+        <tr>
+          <td colspan="10">No records found.</td>
+        </tr>
+
         {% endfor %}
+
       </tbody>
     </table>
 
+
+    <!-- Modal popup for adding new staff -->
+    <!-- Clicking outside the modal triggers closeStaffModal() -->
     <div id="staffModal" class="modal-backdrop" onclick="closeStaffModal(event)">
+
+      <!-- Modal card container -->
       <div class="modal-card">
+
         <h3>Add New Staff Record</h3>
+
+        <!-- Form submits POST request to backend route -->
         <form method="post" action="{{ url_for('add_staff_record') }}" class="modal-form">
+
+          <!-- Input fields for new staff data -->
           <div class="field"><label>School Name</label><input type="text" name="school_name" required></div>
           <div class="field"><label>Department</label><input type="text" name="dept"></div>
           <div class="field"><label>Title</label><input type="text" name="title"></div>
@@ -92,24 +210,50 @@
           <div class="field"><label>Address</label><input type="text" name="address"></div>
           <div class="field"><label>Start Year</label><input type="text" name="start_year"></div>
           <div class="field"><label>Left Year</label><input type="text" name="left_year"></div>
-          <div class="field"><label>Notes</label><textarea name="notes" rows="3"></textarea></div>
-          <div class="modal-actions">
-            <button type="button" class="btn-muted" onclick="closeStaffModal()">Cancel</button>
-            <button type="submit" class="btn-save">Save Record</button>
+
+          <!-- Notes text area -->
+          <div class="field">
+            <label>Notes</label>
+            <textarea name="notes" rows="3"></textarea>
           </div>
+
+       
+          <div class="modal-actions">
+
+            <!-- Cancel button closes modal -->
+            <button type="button" class="btn-muted" onclick="closeStaffModal()">Cancel</button>
+
+            <!-- Submit form to save record -->
+            <button type="submit" class="btn-save">Save Record</button>
+
+          </div>
+
         </form>
       </div>
     </div>
+
   </section>
 </div>
+
+
 <script>
+
+
   function openStaffModal() {
     document.getElementById("staffModal").classList.add("show");
   }
+
+
   function closeStaffModal(evt) {
+
+    // If no event OR user clicked backdrop instead of modal content
     if (!evt || evt.target.id === "staffModal") {
+
+    
       document.getElementById("staffModal").classList.remove("show");
+
     }
   }
+
 </script>
 {% endblock %}
