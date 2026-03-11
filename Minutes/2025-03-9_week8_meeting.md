@@ -23,6 +23,8 @@ Rohan Rohan
 Achievements:
 ----
 
+Start Uploading and commiting files to github.
+
 All page templates implemented.
 
 Navigation between pages functioning.
