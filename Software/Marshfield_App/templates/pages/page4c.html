@@ -2,12 +2,13 @@
 <!-- This page template holds the Logbook (Infants) 1966 to 1973 page. -->
 {% extends "base.html" %}
 {% block content %}
-<div class="content-grid">
-  <section class="panel">
-    <h2>Logbook (Infants) 1966 - 1973</h2>
-    <p>Logbook (Infants) 1966 - 1973</p>
-<div class="panel">
-  <div class="grid-links">
+<div class="content-grid"> <!-- grid layout for the page-->
+  <section class="panel"> <!-- Main content panel -->
+    <h2>Logbook (Infants) 1966 - 1973</h2> <!-- This is the heading for page 4c -->
+    <p>Logbook (Infants) 1966 - 1973</p>  
+<div class="panel"> <!--Creates a panel inside the main panel-->
+  <div class="grid-links"> <!--Creates a grid layout for mini panel -->
+  <!-- in each <a> line below contains the clickable logbooks links for different indexes-->
     <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=243" target="_blank">Index A</a>
 <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=244" target="_blank">Index B C</a>
 <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=245" target="_blank">Index D E F</a>
@@ -18,19 +19,21 @@
 <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=247" target="_blank">Index N O</a>
 <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=247" target="_blank">Index P Q</a>
 <a href="/Images/Log%20books/Infant_1877%20-1905.pdf#page=247" target="_blank">Index R S</a>
-  </div>
-</div>
-<p>Navigation for linked source pages: previous page, next page, and home (this page).</p>
+  </div> <!-- closes a grid layout for mini panel -->
+</div>  <!-- closes the panel inside the main panel-->
+    
+<p>Navigation for linked source pages: previous page, next page, and home (this page).</p>  <!-- a text to explain the navigation-->
 
-  </section>
-  <aside class="panel">
-    <h2>Notable Dates</h2>
-    <ul>
+  </section> <!-- closes Main content panel -->
+  <aside class="panel"> <!-- Starts side content panel containing the noteable notes-->
+    <h2>Notable Dates</h2> <!-- This is the heading for side panel -->
+    <ul> <!-- Starts unordered list for noteable dates -->
       
       
       
-    </ul>
-  </aside>
-</div>
+    </ul> <!-- closes unordered list for noteable dates -->
+  </aside> <!-- closes side content panel containing the noteable notes-->
+</div> <!-- closes grid layout for the page-->
 {% endblock %}
+
 
