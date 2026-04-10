@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!-- File: instruction_manual.html -->
 <!-- This is the styled instruction manual for running and maintaining the app. -->
@@ -183,6 +184,7 @@
       <h3>Project files required</h3>
       <ul>
         <li>Full <code>Marshfield_App</code> folder, including <code>app.py</code>, <code>requirements.txt</code>, <code>templates/</code>, <code>static/</code>, <code>Images/</code>, <code>data/</code></li>
+        <li>Startup helper files: <code>start_app.bat</code>, <code>install_desktop_shortcut.bat</code>, <code>create_desktop_shortcut.ps1</code></li>
       </ul>
 
       <div class="note">
@@ -219,6 +221,25 @@
         creating the virtual environment, installing packages, or writing to protected folders.
       </div>
 
+      <h3>Optional one-click desktop icon setup (recommended)</h3>
+      <ol>
+        <li>After completing the normal setup above, run this file once:
+          <pre><code>install_desktop_shortcut.bat</code></pre>
+        </li>
+        <li>This creates a desktop icon called <strong>Marshfield School History</strong>.</li>
+        <li>From next time onward, just double-click that desktop icon to open the app. No Python command is needed.</li>
+      </ol>
+
+      <div class="note">
+        The desktop icon runs <code>start_app.bat</code>. That launcher starts the local Flask server on port 5000
+        (if it is not already running) and opens <code>http://127.0.0.1:5000/page1</code> in the browser.
+      </div>
+
+      <div class="warning">
+        If shortcut creation fails due to permissions or execution policy, run Command Prompt or PowerShell as
+        <strong>Administrator</strong> and run <code>install_desktop_shortcut.bat</code> again.
+      </div>
+
       <h2 id="s3">3) If run fails (quick fixes)</h2>
       <ul>
         <li><strong>flask not recognized:</strong> use <code>python -m flask --app app run --debug</code></li>
@@ -235,6 +256,9 @@
         <li><code>static/css/styles.css</code>: colors/layout/style</li>
         <li><code>Images/</code>: linked archive files</li>
         <li><code>data/staff.db</code>, <code>data/sources.db</code>: databases</li>
+        <li><code>start_app.bat</code>: one-click app launcher</li>
+        <li><code>install_desktop_shortcut.bat</code>: one-time desktop icon setup</li>
+        <li><code>create_desktop_shortcut.ps1</code>: creates desktop shortcut target</li>
       </ul>
 
       <h2 id="s5">5) Rebuild or refresh the databases</h2>
@@ -292,6 +316,7 @@ python import_excel_data.py</code></pre>
 
       <h2 id="s13">13) Stop the app</h2>
       <p>Press <code>Ctrl + C</code> in the PowerShell window running Flask.</p>
+      <p>If launched from desktop icon, close the terminal window named <code>Marshfield App Server</code> or press <code>Ctrl + C</code> in that window.</p>
     </main>
 
     <footer>
