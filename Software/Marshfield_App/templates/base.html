@@ -27,5 +27,26 @@
     </section>
     <footer>Community History Research by Ray Greenhough</footer>
   </main>
+
+  <!-- Global media viewer so PDF and image links can open inside the page. -->
+  <div id="mediaViewer" class="media-viewer" aria-hidden="true">
+    <div class="media-viewer-backdrop" data-close="true"></div>
+    <section class="media-viewer-dialog" role="dialog" aria-modal="true" aria-label="Document viewer">
+      <header class="media-viewer-header">
+        <h2 id="mediaViewerTitle">Document viewer</h2>
+        <button type="button" id="mediaViewerClose" class="media-viewer-close" aria-label="Close viewer">Close</button>
+      </header>
+      <div class="media-viewer-body">
+        <img id="mediaViewerImage" alt="Selected source image" hidden>
+        <iframe id="mediaViewerFrame" title="Selected source file" hidden></iframe>
+      </div>
+      <footer class="media-viewer-footer">
+        <button type="button" id="mediaViewerPrev" class="media-viewer-nav">Previous</button>
+        <button type="button" id="mediaViewerNext" class="media-viewer-nav">Next</button>
+      </footer>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/media-viewer.js') }}"></script>
 </body>
 </html>
