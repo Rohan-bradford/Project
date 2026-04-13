@@ -1,6 +1,8 @@
 Week 11 – Meeting Minutes
+----
 Date: Week 8
 Participants:
+----
 
 Ewa Rapucha
 
@@ -17,6 +19,7 @@ Abdullah Sarfraz
 Rohan Rohan
 
 Achievements:
+----
 
 We implemented the final changes needed. A media viewer js file was created.
 
