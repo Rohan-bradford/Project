@@ -1,0 +1,377 @@
+{
+  "summary": {
+    "total": 46,
+    "passed": 46,
+    "failed": 0
+  },
+  "rows": [
+    {
+      "test_id": "AT-001",
+      "area": "Startup",
+      "description": "Open root URL /",
+      "expected": "302 redirect to /page1",
+      "actual": "302 -> /page1",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE1",
+      "area": "Page Route",
+      "description": "Open /page1",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE1A",
+      "area": "Page Route",
+      "description": "Open /page1a",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE2",
+      "area": "Page Route",
+      "description": "Open /page2",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE3",
+      "area": "Page Route",
+      "description": "Open /page3",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE3A",
+      "area": "Page Route",
+      "description": "Open /page3a",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4",
+      "area": "Page Route",
+      "description": "Open /page4",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4A",
+      "area": "Page Route",
+      "description": "Open /page4a",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4B",
+      "area": "Page Route",
+      "description": "Open /page4b",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4C",
+      "area": "Page Route",
+      "description": "Open /page4c",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4D",
+      "area": "Page Route",
+      "description": "Open /page4d",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4E",
+      "area": "Page Route",
+      "description": "Open /page4e",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4F",
+      "area": "Page Route",
+      "description": "Open /page4f",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4G",
+      "area": "Page Route",
+      "description": "Open /page4g",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4H",
+      "area": "Page Route",
+      "description": "Open /page4h",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4I",
+      "area": "Page Route",
+      "description": "Open /page4i",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4J",
+      "area": "Page Route",
+      "description": "Open /page4j",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4K",
+      "area": "Page Route",
+      "description": "Open /page4k",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4L",
+      "area": "Page Route",
+      "description": "Open /page4l",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4M",
+      "area": "Page Route",
+      "description": "Open /page4m",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4N",
+      "area": "Page Route",
+      "description": "Open /page4n",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4O",
+      "area": "Page Route",
+      "description": "Open /page4o",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4P",
+      "area": "Page Route",
+      "description": "Open /page4p",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4Q",
+      "area": "Page Route",
+      "description": "Open /page4q",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4R",
+      "area": "Page Route",
+      "description": "Open /page4r",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE4S",
+      "area": "Page Route",
+      "description": "Open /page4s",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE5",
+      "area": "Page Route",
+      "description": "Open /page5",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-PG-PAGE6",
+      "area": "Page Route",
+      "description": "Open /page6",
+      "expected": "200 response",
+      "actual": "200",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-002",
+      "area": "Routing Safety",
+      "description": "Open invalid route",
+      "expected": "Redirect safely to /page1",
+      "actual": "302 -> /page1",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-NAV-PAGE1",
+      "area": "Navigation",
+      "description": "Check global nav labels on /page1",
+      "expected": "All 6 labels present",
+      "actual": "present",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-NAV-PAGE2",
+      "area": "Navigation",
+      "description": "Check global nav labels on /page2",
+      "expected": "All 6 labels present",
+      "actual": "present",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-NAV-PAGE3",
+      "area": "Navigation",
+      "description": "Check global nav labels on /page3",
+      "expected": "All 6 labels present",
+      "actual": "present",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-NAV-PAGE4",
+      "area": "Navigation",
+      "description": "Check global nav labels on /page4",
+      "expected": "All 6 labels present",
+      "actual": "present",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-NAV-PAGE5",
+      "area": "Navigation",
+      "description": "Check global nav labels on /page5",
+      "expected": "All 6 labels present",
+      "actual": "present",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-NAV-PAGE6",
+      "area": "Navigation",
+      "description": "Check global nav labels on /page6",
+      "expected": "All 6 labels present",
+      "actual": "present",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-FILE-01",
+      "area": "Archive Files",
+      "description": "Open /Images/Log%20books/Infant_1877%20-1905.pdf",
+      "expected": "200 response",
+      "actual": "200 (application/pdf)",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-FILE-02",
+      "area": "Archive Files",
+      "description": "Open /Images/Log%20books/Junior_1877%20-%201910.pdf",
+      "expected": "200 response",
+      "actual": "200 (application/pdf)",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-FILE-03",
+      "area": "Archive Files",
+      "description": "Open /Images/Log%20books/Church_%20School__%201868%20-%201903.pdf",
+      "expected": "200 response",
+      "actual": "200 (application/pdf)",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-FILE-04",
+      "area": "Archive Files",
+      "description": "Open /Images/Punishment_Books/Marshfield_Punishment_Book/003%20-%201903%20Oct%20-%201903%20Nov.jpg",
+      "expected": "200 response",
+      "actual": "200 (image/jpeg)",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-003",
+      "area": "Reliability",
+      "description": "Open missing image file",
+      "expected": "404 without app crash",
+      "actual": "404",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-DB-01",
+      "area": "Staff DB",
+      "description": "Filter by school_name on /page5",
+      "expected": "Page loads and seeded row visible",
+      "actual": "status=200, row=yes",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-DB-02",
+      "area": "Sources DB",
+      "description": "Filter by school and source_type on /page6",
+      "expected": "Page loads and seeded row visible",
+      "actual": "status=200, row=yes",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-DB-03",
+      "area": "Staff DB",
+      "description": "Submit /page5/add with missing School Name",
+      "expected": "Redirect with status=missing",
+      "actual": "302 -> /page5?status=missing",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-DB-04",
+      "area": "Staff DB",
+      "description": "Submit valid /page5/add",
+      "expected": "Redirect status=added and row inserted",
+      "actual": "302, count=1",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-DB-05",
+      "area": "Sources DB",
+      "description": "Submit /page6/add with missing Source Name",
+      "expected": "Redirect with status=missing",
+      "actual": "302 -> /page6?status=missing",
+      "status": "Pass"
+    },
+    {
+      "test_id": "AT-DB-06",
+      "area": "Sources DB",
+      "description": "Submit valid /page6/add",
+      "expected": "Redirect status=added and row inserted",
+      "actual": "302, row=('Inserted Source', '/Images/Log books/Infant_1877 -1905.pdf')",
+      "status": "Pass"
+    }
+  ]
+}

@@ -1,0 +1,1302 @@
+{
+  "summary": {
+    "total": 44,
+    "pass": 43,
+    "fail": 0,
+    "warn": 0,
+    "info": 1
+  },
+  "rows": [
+    {
+      "part": "app.py",
+      "check": "Python syntax parse",
+      "result": "Parsed successfully",
+      "evidence": "ast.parse OK",
+      "status": "Pass"
+    },
+    {
+      "part": "init_db.py",
+      "check": "Python syntax parse",
+      "result": "Parsed successfully",
+      "evidence": "ast.parse OK",
+      "status": "Pass"
+    },
+    {
+      "part": "import_excel_data.py",
+      "check": "Python syntax parse",
+      "result": "Parsed successfully",
+      "evidence": "ast.parse OK",
+      "status": "Pass"
+    },
+    {
+      "part": "model.py",
+      "check": "Python syntax parse",
+      "result": "Parsed successfully",
+      "evidence": "ast.parse OK",
+      "status": "Pass"
+    },
+    {
+      "part": "start_app.bat",
+      "check": "Script presence",
+      "result": "Exists",
+      "evidence": "C:\\Users\\rohan\\OneDrive\\Documents\\GitHub\\amazon\\marshfield_app_v1\\start_app.bat",
+      "status": "Pass"
+    },
+    {
+      "part": "start_app.bat",
+      "check": "Non-empty script",
+      "result": "Non-empty",
+      "evidence": "1457 chars",
+      "status": "Pass"
+    },
+    {
+      "part": "install_desktop_shortcut.bat",
+      "check": "Script presence",
+      "result": "Exists",
+      "evidence": "C:\\Users\\rohan\\OneDrive\\Documents\\GitHub\\amazon\\marshfield_app_v1\\install_desktop_shortcut.bat",
+      "status": "Pass"
+    },
+    {
+      "part": "install_desktop_shortcut.bat",
+      "check": "Non-empty script",
+      "result": "Non-empty",
+      "evidence": "539 chars",
+      "status": "Pass"
+    },
+    {
+      "part": "create_desktop_shortcut.ps1",
+      "check": "Script presence",
+      "result": "Exists",
+      "evidence": "C:\\Users\\rohan\\OneDrive\\Documents\\GitHub\\amazon\\marshfield_app_v1\\create_desktop_shortcut.ps1",
+      "status": "Pass"
+    },
+    {
+      "part": "create_desktop_shortcut.ps1",
+      "check": "Non-empty script",
+      "result": "Non-empty",
+      "evidence": "906 chars",
+      "status": "Pass"
+    },
+    {
+      "part": "static/js/media-viewer.js",
+      "check": "JS syntax check",
+      "result": "Valid syntax",
+      "evidence": "node --check OK",
+      "status": "Pass"
+    },
+    {
+      "part": "static/css/styles.css",
+      "check": "CSS non-empty",
+      "result": "Non-empty",
+      "evidence": "7721 chars",
+      "status": "Pass"
+    },
+    {
+      "part": "static/css/styles.css",
+      "check": "Contains core selectors",
+      "result": "Found",
+      "evidence": "check .page/nav/.content-grid",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page1.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page1a.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page2.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page3.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page3a.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4a.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4b.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4c.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4d.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4e.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4f.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4g.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4h.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4i.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4j.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4k.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4l.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4m.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4n.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4o.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4p.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4q.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4r.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page4s.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page5.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/page6.html",
+      "check": "Template inheritance",
+      "result": "Uses base.html",
+      "evidence": "{% extends \"base.html\" %}",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/base.html",
+      "check": "Base template structure",
+      "result": "Contains nav and block content",
+      "evidence": "check block content + nav",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/*",
+      "check": "Image link validity",
+      "result": "All /Images links resolve to existing files",
+      "evidence": "No missing links detected",
+      "status": "Pass"
+    },
+    {
+      "part": "templates/pages/*",
+      "check": "Placeholder links (#)",
+      "result": "Found placeholders",
+      "evidence": "245 placeholder links",
+      "status": "Info"
+    },
+    {
+      "part": "app.py + templates/pages",
+      "check": "Page registry consistency",
+      "result": "PAGES list matches template files",
+      "evidence": "No missing/extra templates",
+      "status": "Pass"
+    }
+  ],
+  "missing_image_links": [],
+  "placeholder_links": [
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page1a.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4f.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4g.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4h.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4i.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4j.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4k.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4l.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4m.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4n.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4o.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ],
+    [
+      "page4p.html",
+      "#"
+    ]
+  ]
+}

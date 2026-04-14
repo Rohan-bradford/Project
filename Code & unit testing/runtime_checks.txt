@@ -1,0 +1,21 @@
+ROUTE_CHECKS
+('/', 302, 3.68, '/page1')
+('/page1', 200, 19.03, '')
+('/page2', 200, 14.07, '')
+('/page3', 200, 10.93, '')
+('/page4', 200, 9.91, '')
+('/page5', 200, 16.16, '')
+('/page6', 200, 66.42, '')
+('/page3a', 200, 10.62, '')
+('/page4q', 200, 8.82, '')
+
+RELIABILITY
+missing_file_status=404
+invalid_route_status=302
+invalid_route_location=/page1
+
+FILE_CHECKS
+('/Images/Log%20books/Infant_1877%20-1905.pdf', 200, 'application/pdf')
+('/Images/Log%20books/Junior_1877%20-%201910.pdf', 200, 'application/pdf')
+('/Images/Log%20books/Church_%20School__%201868%20-%201903.pdf', 200, 'application/pdf')
+('/Images/Punishment_Books/Marshfield_Punishment_Book/003%20-%201903%20Oct%20-%201903%20Nov.jpg', 200, 'image/jpeg')

@@ -1,0 +1,33 @@
+PAGE_ACCEPTANCE_CHECKS
+/page1	200
+/page1a	200
+/page2	200
+/page3	200
+/page3a	200
+/page4	200
+/page4a	200
+/page4b	200
+/page4c	200
+/page4d	200
+/page4e	200
+/page4f	200
+/page4g	200
+/page4h	200
+/page4i	200
+/page4j	200
+/page4k	200
+/page4l	200
+/page4m	200
+/page4n	200
+/page4o	200
+/page4p	200
+/page4q	200
+/page4r	200
+/page4s	200
+/page5	200
+/page6	200
+
+SPECIAL_ROUTES
+/	302	/page1
+/not-a-page	302	/page1
+/Images/does-not-exist.jpg	404	
