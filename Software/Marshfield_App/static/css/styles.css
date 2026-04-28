@@ -1,433 +1,447 @@
 /* File: styles.css */
-/* This stylesheet controls the shared layout, colors, and page styling. */
-:root {
-  --bg: #e8dfcc;
-  --panel: #ede4d0;
-  --border: #c89b2f;
-  --title: #c89b2f;
-  --accent: #1a274c;
-  --accent-2: #263863;
-  --accent-hover: #c89b2f;
-  --text: #1f1b16;
-  --link: #8b1f1f;
-  --table-alt: #dfd3b9;
-  --ok: #2a7f3b;
-  --warn: #8b1f1f;
+/* Change the rules in this file to adjust the layout, sizing, and styling of the website. */
+
+:root { 
+  /* Change the # codes below to change the main colors used throughout the website. */
+  --bg: #e8dfcc; /* Change this hex code to change the background color of the whole page. */
+  --panel: #ede4d0; /* Change this hex code to change the background color of the content boxes. */
+  --border: #c89b2f; /* Change this hex code to change the color of lines and borders. */
+  --title: #c89b2f; /* Change this hex code to change the color of large titles. */
+  --accent: #1a274c; /* Change this hex code to change the primary dark brand color (like the header). */
+  --accent-2: #263863; /* Change this hex code to change the secondary brand color (like menus/buttons). */
+  --accent-hover: #c89b2f; /* Change this hex code to change the color things turn when hovered over. */
+  --text: #1f1b16; /* Change this hex code to change the color of standard paragraph text. */
+  --link: #8b1f1f; /* Change this hex code to change the color of clickable links. */
+  --table-alt: #dfd3b9; /* Change this hex code to change the color of alternating table rows. */
+  --ok: #2a7f3b; /* Change this hex code to change the color of success messages. */
+  --warn: #8b1f1f; /* Change this hex code to change the color of warning/error messages. */
 }
-* { box-sizing: border-box; }
+
+* { box-sizing: border-box; } /* Do not change this; it prevents boxes from resizing unpredictably. */
+
 body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--text);
-  background: var(--bg);
+  margin: 0; /* Change this number to add empty space around the very edges of the webpage. */
+  font-family: Georgia, "Times New Roman", serif; /* Change these font names to change the text style of the whole site. */
+  color: var(--text); /* Change 'var(--text)' to a specific color to override the text color. */
+  background: var(--bg); /* Change 'var(--bg)' to a specific color to override the background color. */
 }
+
 .page {
-  width: 100vw;
-  margin: 0;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  overflow: hidden;
+  width: 100vw; /* Change '100vw' to a smaller value (like '80vw') to make the website narrower. */
+  margin: 0; /* Change this to '0 auto' if you made the width smaller and want it centered. */
+  background: var(--panel); /* Change this variable to change the page's container background. */
+  border: 1px solid var(--border); /* Change '1px' to make the outer border thicker or thinner. */
+  overflow: hidden; /* Change to 'auto' if content is getting cut off at the edges. */
 }
+
 header {
-  padding: 18px 20px 14px;
-  background: var(--accent);
-  border-bottom: 2px solid var(--border);
-  text-align: center;
+  padding: 18px 20px 14px; /* Change these numbers to adjust the spacing inside the top header (top, sides, bottom). */
+  background: var(--accent); /* Change this variable to change the header's background color. */
+  border-bottom: 2px solid var(--border); /* Change '2px' to make the line under the header thicker. */
+  text-align: center; /* Change to 'left' or 'right' to move the header text. */
 }
+
 header h1 {
-  margin: 0;
-  color: var(--title);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 46px;
+  margin: 0; /* Increase this number to add space around the main title. */
+  color: var(--title); /* Change this variable to change the main title's color. */
+  letter-spacing: 1px; /* Increase this number to spread the title letters further apart. */
+  text-transform: uppercase; /* Change to 'lowercase' or 'none' to change the title's capitalization. */
+  font-size: 46px; /* Change '46px' to make the main website title bigger or smaller. */
 }
+
 .hero {
-  height: 300px;
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: var(--accent-2);
-  border-bottom: 2px solid var(--border);
+  height: 300px; /* Change '300px' to make the top banner image taller or shorter. */
+  background-position: center center; /* Change to 'top left' or 'bottom right' to shift the banner image. */
+  background-size: contain; /* Change to 'cover' if you want the image to stretch across the whole box. */
+  background-repeat: no-repeat; /* Change to 'repeat' if you want the image to tile like wallpaper. */
+  background-color: var(--accent-2); /* Change this variable to alter the color behind the banner image. */
+  border-bottom: 2px solid var(--border); /* Change '2px' to adjust the thickness of the line under the banner. */
 }
+
 nav {
-  padding: 0 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  border-bottom: 2px solid var(--border);
-  background: var(--accent-2);
+  padding: 0 10px; /* Change '10px' to add or remove space at the edges of the menu bar. */
+  display: flex; /* Do not change; keeps menu items in a row. */
+  flex-wrap: wrap; /* Do not change; allows menu to wrap on small screens. */
+  gap: 0; /* Increase this number to add spacing between the menu buttons. */
+  border-bottom: 2px solid var(--border); /* Change '2px' to adjust the thickness of the line under the menu. */
+  background: var(--accent-2); /* Change this variable to change the menu bar's background color. */
 }
+
 nav a {
-  text-decoration: none;
-  padding: 9px 14px;
-  border-right: 1px solid var(--border);
-  color: #f4efe5;
-  background: transparent;
-  font-weight: 700;
-  font-size: 14px;
+  text-decoration: none; /* Change to 'underline' if you want lines under the menu links. */
+  padding: 9px 14px; /* Change these numbers to make the menu clickable areas larger or smaller. */
+  border-right: 1px solid var(--border); /* Change '1px' to adjust the divider line between menu links. */
+  color: #f4efe5; /* Change this hex code to change the color of the text inside the menu links. */
+  background: transparent; /* Change to a color code to give the links a solid background block. */
+  font-weight: 700; /* Change to '400' to make the menu text thinner, or '900' for thicker. */
+  font-size: 14px; /* Change '14px' to make the menu link text bigger or smaller. */
 }
+
 nav a:hover, nav a.active {
-  color: #111;
-  background: var(--accent-hover);
+  color: #111; /* Change this hex code to change the text color when the mouse hovers over the link. */
+  background: var(--accent-hover); /* Change this variable to change the background color on hover. */
 }
+
 .content-grid {
-  display: grid;
-  grid-template-columns: 3fr 1.1fr;
-  gap: 14px;
-  padding: 14px;
+  display: grid; /* Do not change; keeps the layout grid active. */
+  grid-template-columns: 3fr 1.1fr; /* Change these numbers to adjust column widths (e.g., '1fr 1fr' makes them equal halves). */
+  gap: 14px; /* Increase this number to put more space between the columns. */
+  padding: 14px; /* Increase this number to add more space around the entire grid area. */
 }
+
 .panel {
-  border: 1px solid var(--border);
-  padding: 12px;
-  background: #efe6d2;
+  border: 1px solid var(--border); /* Change '1px' to make the borders around content boxes thicker. */
+  padding: 12px; /* Change '12px' to add or remove space inside the content boxes. */
+  background: #efe6d2; /* Change this hex code to change the background color of the content boxes. */
 }
+
 .panel h2 {
-  margin-top: 0;
-  color: #f2d89a;
-  background: var(--accent);
-  border: 1px solid var(--border);
-  padding: 10px 12px;
-  font-size: 24px;
+  margin-top: 0; /* Increase this number to push the title further down from the top. */
+  color: #f2d89a; /* Change this hex code to alter the text color of the box titles. */
+  background: var(--accent); /* Change this variable to alter the background behind the box titles. */
+  border: 1px solid var(--border); /* Change '1px' to adjust the border around the box titles. */
+  padding: 10px 12px; /* Change these numbers to add or remove space inside the title box. */
+  font-size: 24px; /* Change '24px' to make the box titles bigger or smaller. */
 }
+
 .panel aside h2,
 aside.panel h2 {
-  color: #121212;
-  background: var(--accent-hover);
-}
-.panel p, .panel li, .panel a, .panel td, .panel th, .panel label, .panel input, .panel select, .panel button {
-  font-size: 16px;
-}
-.panel a {
-  color: var(--link);
+  color: #121212; /* Change this hex code to change the text color of titles in the sidebar. */
+  background: var(--accent-hover); /* Change this variable to change the sidebar title background. */
 }
 
-/* Child pages in the brief are table-first pages without right-side dates panel. */
+.panel p, .panel li, .panel a, .panel td, .panel th, .panel label, .panel input, .panel select, .panel button {
+  font-size: 16px; /* Change '16px' to make all standard text inside the boxes bigger or smaller. */
+}
+
+.panel a {
+  color: var(--link); /* Change this variable to change the color of links inside the text. */
+}
+
 .child-page .content-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Change to '3fr 1fr' if you decide you DO want a sidebar on child pages. */
 }
+
 .child-page .content-grid > aside {
-  display: none;
+  display: none; /* Change to 'block' if you want the sidebar to be visible on child pages. */
 }
+
 footer {
-  padding: 10px 14px;
-  border-top: 2px solid var(--border);
-  text-align: center;
-  background: var(--accent);
-  color: #f2d89a;
-  font-weight: 700;
-  font-style: italic;
+  padding: 10px 14px; /* Change these numbers to make the footer area taller or shorter. */
+  border-top: 2px solid var(--border); /* Change '2px' to adjust the thickness of the line above the footer. */
+  text-align: center; /* Change to 'left' or 'right' to align the footer text differently. */
+  background: var(--accent); /* Change this variable to alter the footer's background color. */
+  color: #f2d89a; /* Change this hex code to change the footer's text color. */
+  font-weight: 700; /* Change to '400' to make the footer text thinner. */
+  font-style: italic; /* Change to 'normal' to remove the slanted look from the footer text. */
 }
+
 .page-controls {
-  padding: 10px 18px;
-  border-top: 1px solid var(--border);
-  background: #e5dac3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  padding: 10px 18px; /* Change these numbers to add space inside the controls bar. */
+  border-top: 1px solid var(--border); /* Change '1px' to adjust the line above the controls. */
+  background: #e5dac3; /* Change this hex code to change the controls bar background color. */
+  display: flex; /* Do not change; keeps buttons in a row. */
+  flex-wrap: wrap; /* Do not change; lets buttons wrap on small screens. */
+  gap: 10px; /* Change '10px' to increase or decrease the space between buttons. */
 }
+
 .page-controls a {
-  text-decoration: none;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  color: #f4efe5;
-  background: var(--accent-2);
-  font-weight: 600;
+  text-decoration: none; /* Change to 'underline' to add lines under the button text. */
+  padding: 6px 10px; /* Change these numbers to make the buttons themselves larger or smaller. */
+  border: 1px solid var(--border); /* Change '1px' to adjust the button border thickness. */
+  color: #f4efe5; /* Change this hex code to alter the text color inside these buttons. */
+  background: var(--accent-2); /* Change this variable to alter the button background color. */
+  font-weight: 600; /* Change to '800' for thicker text, '400' for thinner text. */
 }
+
 .page-controls a:hover {
-  color: #111;
-  background: var(--accent-hover);
+  color: #111; /* Change this hex code to alter the text color when hovering over the button. */
+  background: var(--accent-hover); /* Change this variable to alter the button color when hovered. */
 }
-table { width: 100%; border-collapse: collapse; }
-th, td { border: 1px solid #beaa7c; padding: 8px; text-align: left; }
+
+table { width: 100%; border-collapse: collapse; } /* Change '100%' to a smaller number (like '80%') to make tables narrower. */
+th, td { border: 1px solid #beaa7c; padding: 8px; text-align: left; } /* Change '8px' to add or remove space inside table cells. Change 'left' to 'center' to center table text. */
+
 th {
-  background: var(--accent-2);
-  color: #f2d89a;
+  background: var(--accent-2); /* Change this variable to change the background color of the table top row. */
+  color: #f2d89a; /* Change this hex code to alter the text color in the table top row. */
 }
+
 tbody tr:nth-child(even) {
-  background: var(--table-alt);
+  background: var(--table-alt); /* Change this variable to alter the color of every other table row. */
 }
-.grid-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
-.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 10px; }
+
+.grid-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; } /* Change '150px' to change the minimum width of the grid items. */
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 10px; } /* Change '180px' to make form inputs wider or narrower. */
+
 input, select, button, textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #b5a07a;
-  background: #f2e9d7;
-  color: #111;
+  width: 100%; /* Change to a pixel value (like '200px') if you don't want them stretching full width. */
+  padding: 8px; /* Change '8px' to make the typing areas taller or shorter. */
+  border: 1px solid #b5a07a; /* Change '1px' to make the input box borders thicker. */
+  background: #f2e9d7; /* Change this hex code to alter the background color of typing boxes. */
+  color: #111; /* Change this hex code to alter the color of the text you type. */
 }
+
 button {
-  background: var(--accent-2);
-  color: #fff;
-  border: 1px solid #1b1f35;
-  cursor: pointer;
+  background: var(--accent-2); /* Change this variable to alter the default button color. */
+  color: #fff; /* Change this hex code to alter the text color inside buttons. */
+  border: 1px solid #1b1f35; /* Change '1px' to make button borders thicker. */
+  cursor: pointer; /* Do not change; gives the mouse a pointing hand icon. */
 }
-button:hover { background: var(--accent-hover); color: #111; }
+
+button:hover { background: var(--accent-hover); color: #111; } /* Change 'var(--accent-hover)' to alter the button color when you hover over it. */
 
 .db-panel {
-  background: #e8ddc8;
+  background: #e8ddc8; /* Change this hex code to change the background color of the database panels. */
 }
 
 .db-title {
-  margin-bottom: 12px;
+  margin-bottom: 12px; /* Change '12px' to increase or decrease the space below the database title. */
 }
 
 .status-ok {
-  color: var(--ok);
-  font-weight: 700;
-  margin: 0 0 10px;
+  color: var(--ok); /* Change this variable to change the color of success text. */
+  font-weight: 700; /* Change to '400' to make the success text thinner. */
+  margin: 0 0 10px; /* Change '10px' to adjust the space below the success message. */
 }
 
 .status-warn {
-  color: var(--warn);
-  font-weight: 700;
-  margin: 0 0 10px;
+  color: var(--warn); /* Change this variable to change the color of warning/error text. */
+  font-weight: 700; /* Change to '400' to make the warning text thinner. */
+  margin: 0 0 10px; /* Change '10px' to adjust the space below the warning message. */
 }
 
 .search-panel {
-  border: 1px solid var(--border);
-  padding: 10px;
-  margin-bottom: 12px;
+  border: 1px solid var(--border); /* Change '1px' to make the search box border thicker. */
+  padding: 10px; /* Change '10px' to add space inside the search area. */
+  margin-bottom: 12px; /* Change '12px' to adjust the space below the search area. */
 }
 
 .search-panel h3 {
-  margin: 0 0 8px;
+  margin: 0 0 8px; /* Change '8px' to adjust the space below the word "Search". */
 }
 
 .field label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 4px;
+  display: block; /* Do not change; keeps the label above the text box. */
+  font-weight: 700; /* Change to '400' to un-bold the input labels. */
+  margin-bottom: 4px; /* Change '4px' to add space between the label and the text box. */
 }
 
 .search-actions {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
+  display: flex; /* Do not change. */
+  gap: 8px; /* Change '8px' to increase the space between the search buttons. */
+  justify-content: flex-end; /* Change to 'flex-start' to move the buttons to the left side. */
 }
 
 .btn-primary, .btn-muted, .btn-save, .btn-add {
-  width: auto;
-  padding: 8px 14px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
+  width: auto; /* Change to '100%' if you want these buttons to stretch all the way across. */
+  padding: 8px 14px; /* Change these numbers to make these buttons larger or smaller. */
+  font-weight: 700; /* Change to '400' to un-bold the button text. */
+  text-decoration: none; /* Change to 'underline' to add lines under the text. */
+  display: inline-block; /* Do not change. */
 }
 
-.btn-primary {
-  background: var(--accent-2);
-  color: #fff;
-}
-
-.btn-muted {
-  background: #9e9886;
-  color: #fff;
-}
-
-.btn-save {
-  background: #2c7b39;
-  color: #fff;
-}
-
-.btn-add {
-  background: #2f7f33;
-  color: #fff;
-}
+.btn-primary { background: var(--accent-2); color: #fff; } /* Change 'var(--accent-2)' to alter the main button color. */
+.btn-muted { background: #9e9886; color: #fff; } /* Change '#9e9886' to alter the cancel/clear button color. */
+.btn-save { background: #2c7b39; color: #fff; } /* Change '#2c7b39' to alter the save button color. */
+.btn-add { background: #2f7f33; color: #fff; } /* Change '#2f7f33' to alter the add button color. */
 
 .db-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 12px 0 8px;
+  display: flex; /* Do not change. */
+  justify-content: space-between; /* Change to 'center' to push toolbar items to the middle. */
+  align-items: center; /* Do not change. */
+  margin: 12px 0 8px; /* Change these numbers to add space above or below the toolbar. */
 }
 
 .db-toolbar span {
-  font-style: italic;
+  font-style: italic; /* Change to 'normal' to make the toolbar text straight instead of slanted. */
 }
 
 .db-table a {
-  color: var(--link);
+  color: var(--link); /* Change this variable to alter the color of links specifically inside the tables. */
 }
 
 .modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  z-index: 1000;
+  position: fixed; /* Do not change. */
+  inset: 0; /* Do not change. */
+  background: rgba(0, 0, 0, 0.5); /* Change '0.5' to a higher number (like 0.8) to make the background darker behind popups. */
+  display: none; /* Do not change. */
+  align-items: center; /* Do not change. */
+  justify-content: center; /* Do not change. */
+  padding: 16px; /* Change '16px' to adjust spacing around the edges of the screen when a popup is open. */
+  z-index: 1000; /* Do not change. */
 }
 
 .modal-backdrop.show {
-  display: flex;
+  display: flex; /* Do not change. */
 }
 
 .modal-card {
-  width: min(640px, 96vw);
-  max-height: 92vh;
-  overflow: auto;
-  background: #efe6d2;
-  border: 2px solid var(--border);
-  padding: 14px;
+  width: min(640px, 96vw); /* Change '640px' to make the popup window wider or narrower. */
+  max-height: 92vh; /* Change '92vh' to adjust how tall the popup is allowed to get before scrolling. */
+  overflow: auto; /* Do not change; allows scrolling inside the popup. */
+  background: #efe6d2; /* Change this hex code to change the background color of the popup window. */
+  border: 2px solid var(--border); /* Change '2px' to make the popup window border thicker. */
+  padding: 14px; /* Change '14px' to add or remove space inside the popup. */
 }
 
 .modal-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-top: 0; /* Do not change. */
+  margin-bottom: 10px; /* Change '10px' to add space below the popup title. */
 }
 
 .modal-form {
-  display: grid;
-  gap: 8px;
+  display: grid; /* Do not change. */
+  gap: 8px; /* Change '8px' to increase the space between fields inside the popup. */
 }
 
 .modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 6px;
+  display: flex; /* Do not change. */
+  justify-content: flex-end; /* Change to 'flex-start' to move the save/cancel buttons to the left. */
+  gap: 8px; /* Change '8px' to increase space between buttons in the popup. */
+  margin-top: 6px; /* Change '6px' to increase the space above the buttons. */
 }
 
 aside.panel ul {
-  margin-top: 8px;
-  margin-bottom: 0;
-  padding-left: 18px;
+  margin-top: 8px; /* Change '8px' to add space above the sidebar lists. */
+  margin-bottom: 0; /* Change '0' to add space below the sidebar lists. */
+  padding-left: 18px; /* Change '18px' to indent the bullet points more or less. */
 }
 
 aside.panel li {
-  padding: 6px 0;
-  border-bottom: 1px solid #30436b;
+  padding: 6px 0; /* Change '6px' to make the space between sidebar list items larger. */
+  border-bottom: 1px solid #30436b; /* Change '1px' to make the line between sidebar items thicker. */
 }
 
 aside.panel {
-  background: var(--accent);
-  color: #f4e6bf;
+  background: var(--accent); /* Change this variable to alter the sidebar background color. */
+  color: #f4e6bf; /* Change this hex code to alter the general text color in the sidebar. */
 }
 
 aside.panel a {
-  color: #f7d788;
-}
-@media (max-width: 900px) {
-  .content-grid { grid-template-columns: 1fr; }
-  .hero { height: 220px; }
-  header h1 { font-size: 38px; }
+  color: #f7d788; /* Change this hex code to alter the link color in the sidebar. */
 }
 
-/* Global viewer for opening source images and PDFs without leaving the page. */
+@media (max-width: 900px) {
+  /* This block only triggers on mobile/small screens. */
+  .content-grid { grid-template-columns: 1fr; } /* Do not change; makes layout single-column for mobile. */
+  .hero { height: 220px; } /* Change '220px' to adjust the banner image height specifically on mobile. */
+  header h1 { font-size: 38px; } /* Change '38px' to adjust the main title text size specifically on mobile. */
+}
+
 body.media-viewer-open {
-  overflow: hidden;
+  overflow: hidden; /* Do not change; stops the page from scrolling when an image is open. */
 }
 
 .media-viewer {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  z-index: 2100;
+  position: fixed; /* Do not change. */
+  inset: 0; /* Do not change. */
+  display: none; /* Do not change. */
+  align-items: center; /* Do not change. */
+  justify-content: center; /* Do not change. */
+  padding: 16px; /* Change '16px' to adjust how close the viewer gets to the edges of the screen. */
+  z-index: 2100; /* Do not change. */
 }
 
 .media-viewer.show {
-  display: flex;
+  display: flex; /* Do not change. */
 }
 
 .media-viewer-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.72);
+  position: absolute; /* Do not change. */
+  inset: 0; /* Do not change. */
+  background: rgba(0, 0, 0, 0.72); /* Change '0.72' to 1 for a completely solid black background behind the image. */
 }
 
 .media-viewer-dialog {
-  position: relative;
-  width: min(1200px, 96vw);
-  height: min(92vh, 860px);
-  border: 2px solid var(--border);
-  background: #efe6d2;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  position: relative; /* Do not change. */
+  width: min(1200px, 96vw); /* Change '1200px' to make the max image window wider or narrower. */
+  height: min(92vh, 860px); /* Change '860px' to make the max image window taller or shorter. */
+  border: 2px solid var(--border); /* Change '2px' to adjust the border thickness of the image viewer. */
+  background: #efe6d2; /* Change this hex code to alter the viewer window's background frame color. */
+  display: flex; /* Do not change. */
+  flex-direction: column; /* Do not change. */
+  overflow: hidden; /* Do not change. */
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35); /* Change the numbers here to alter the shadow behind the viewer. */
 }
 
 .media-viewer-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  background: var(--accent);
-  border-bottom: 1px solid var(--border);
+  display: flex; /* Do not change. */
+  justify-content: space-between; /* Do not change. */
+  align-items: center; /* Do not change. */
+  gap: 12px; /* Change '12px' to add space between the viewer title and the close button. */
+  padding: 10px 12px; /* Change these numbers to adjust space inside the viewer's top bar. */
+  background: var(--accent); /* Change this variable to alter the viewer's top bar color. */
+  border-bottom: 1px solid var(--border); /* Change '1px' to adjust the line below the viewer's top bar. */
 }
 
 .media-viewer-header h2 {
-  margin: 0;
-  color: #f2d89a;
-  font-size: 20px;
-  line-height: 1.2;
+  margin: 0; /* Do not change. */
+  color: #f2d89a; /* Change this hex code to alter the text color of the viewer title. */
+  font-size: 20px; /* Change '20px' to make the viewer title bigger or smaller. */
+  line-height: 1.2; /* Change '1.2' to adjust spacing if the title wraps to two lines. */
 }
 
 .media-viewer-close {
-  width: auto;
-  padding: 7px 12px;
-  border: 1px solid var(--border);
-  background: #8b1f1f;
-  color: #fff;
-  font-weight: 700;
+  width: auto; /* Do not change. */
+  padding: 7px 12px; /* Change these numbers to make the Close button larger or smaller. */
+  border: 1px solid var(--border); /* Change '1px' to adjust the Close button's border. */
+  background: #8b1f1f; /* Change this hex code to alter the Close button's color. */
+  color: #fff; /* Change this hex code to alter the "X" or text color inside the Close button. */
+  font-weight: 700; /* Change to '400' to un-bold the Close button text. */
 }
 
 .media-viewer-close:hover {
-  background: #b72828;
+  background: #b72828; /* Change this hex code to alter the Close button color when hovering. */
 }
 
 .media-viewer-body {
-  flex: 1;
-  min-height: 0;
-  background: #1b1f35;
+  flex: 1; /* Do not change. */
+  min-height: 0; /* Do not change. */
+  background: #1b1f35; /* Change this hex code to alter the background right behind the image. */
 }
 
 .media-viewer-body img,
 .media-viewer-body iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
+  width: 100%; /* Do not change. */
+  height: 100%; /* Do not change. */
+  border: 0; /* Do not change. */
 }
 
 .media-viewer-body img {
-  object-fit: contain;
-  background: #121827;
+  object-fit: contain; /* Do not change; keeps the image from stretching. */
+  background: #121827; /* Change this hex code to alter the background behind image files specifically. */
 }
 
 .media-viewer-body iframe {
-  background: #fff;
+  background: #fff; /* Change this hex code to alter the background behind PDF files specifically. */
 }
 
 .media-viewer-footer {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-top: 1px solid var(--border);
-  background: #e5dac3;
+  display: flex; /* Do not change. */
+  justify-content: center; /* Change to 'space-between' if you want buttons on opposite sides. */
+  gap: 10px; /* Change '10px' to adjust the space between Next/Prev buttons. */
+  padding: 10px 12px; /* Change these numbers to add space inside the bottom bar of the viewer. */
+  border-top: 1px solid var(--border); /* Change '1px' to adjust the line above the bottom bar. */
+  background: #e5dac3; /* Change this hex code to alter the viewer's bottom bar color. */
 }
 
 .media-viewer-nav {
-  width: auto;
-  min-width: 110px;
-  padding: 8px 14px;
-  border: 1px solid var(--border);
-  background: var(--accent-2);
-  color: #f4efe5;
-  font-weight: 700;
+  width: auto; /* Do not change. */
+  min-width: 110px; /* Change '110px' to adjust the minimum width of the Next/Prev buttons. */
+  padding: 8px 14px; /* Change these numbers to make the Next/Prev buttons larger or smaller. */
+  border: 1px solid var(--border); /* Change '1px' to adjust the Next/Prev button borders. */
+  background: var(--accent-2); /* Change this variable to alter the Next/Prev button color. */
+  color: #f4efe5; /* Change this hex code to alter the text color inside Next/Prev buttons. */
+  font-weight: 700; /* Change to '400' to un-bold the Next/Prev button text. */
 }
 
 .media-viewer-nav:hover {
-  background: var(--accent-hover);
-  color: #111;
+  background: var(--accent-hover); /* Change this variable to alter the Next/Prev button color when hovering. */
+  color: #111; /* Change this hex code to alter the Next/Prev text color when hovering. */
 }
 
 .media-viewer-nav:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  opacity: 0.5; /* Change '0.5' to a lower number to make a disabled button fade out more. */
+  cursor: not-allowed; /* Do not change. */
 }
