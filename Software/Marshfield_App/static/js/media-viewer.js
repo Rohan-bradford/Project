@@ -12,12 +12,14 @@
   const closeBtn = document.getElementById("mediaViewerClose");
   const prevBtn = document.getElementById("mediaViewerPrev");
   const nextBtn = document.getElementById("mediaViewerNext");
+  const homeBtn = document.getElementById("mediaViewerHome");
 
   const imageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".svg"];
   const frameExtensions = [".pdf", ".doc", ".docx"];
 
   let mediaLinks = [];
   let currentIndex = -1;
+  let renderCounter = 0;
 
   function extensionFromHref(href) {
     try {
@@ -84,6 +86,29 @@
     nextBtn.disabled = currentIndex >= mediaLinks.length - 1;
   }
 
+  function loadFrameUrl(url) {
+    // Force reload for same-PDF anchor jumps so #page updates are applied consistently.
+    if (frameEl.src === url) {
+      frameEl.src = "about:blank";
+      window.requestAnimationFrame(function () {
+        frameEl.src = url;
+      });
+      return;
+    }
+
+    frameEl.src = url;
+  }
+
+  function withViewerCacheToken(href) {
+    // Add a lightweight cache token so moving between PDF #page links always refreshes.
+    const url = new URL(href, window.location.href);
+    const hash = url.hash;
+    url.hash = "";
+    url.searchParams.set("_viewer", String(renderCounter));
+    url.hash = hash;
+    return url.href;
+  }
+
   function renderCurrentItem() {
     if (currentIndex < 0 || currentIndex >= mediaLinks.length) {
       return;
@@ -100,7 +125,8 @@
       imageEl.hidden = true;
       imageEl.removeAttribute("src");
       frameEl.hidden = false;
-      frameEl.src = href;
+      renderCounter += 1;
+      loadFrameUrl(withViewerCacheToken(href));
     } else {
       frameEl.hidden = true;
       frameEl.src = "about:blank";
@@ -174,6 +200,12 @@
   closeBtn.addEventListener("click", closeViewer);
   prevBtn.addEventListener("click", function () { move(-1); });
   nextBtn.addEventListener("click", function () { move(1); });
+  if (homeBtn) {
+    homeBtn.addEventListener("click", function () {
+      const homeUrl = homeBtn.getAttribute("data-home-url") || "/page1";
+      window.location.href = homeUrl;
+    });
+  }
 
   viewer.addEventListener("click", function (event) {
     const target = event.target;
