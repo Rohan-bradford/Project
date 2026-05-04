@@ -1,53 +1,99 @@
-<!doctype html>
+<!doctype html> <!-- Tells the browser this is an HTML5 document -->
+
 <!-- File: base.html -->
-<!-- This shared template holds the common layout, hero image, navigation, and footer. -->
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marshfield School History</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<!-- This is the shared layout used by all pages in the site -->
+
+<html lang="en"> <!-- Starts the HTML page and sets the language to English -->
+
+<head> <!-- Holds page settings and links that are not shown directly on the page -->
+
+  <meta charset="utf-8"> <!-- Allows the page to display normal text and special characters correctly -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Makes the page scale properly on phones, tablets, and desktops -->
+
+  <title>Marshfield School History</title> <!-- Sets the title shown in the browser tab -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Loads the main CSS file from the static folder -->
+
 </head>
-<body class="{% if is_child_page %}child-page{% endif %}">
-  <main class="page">
-    <header>
-      <h1>{{ page_title }}</h1>
+
+<body class="{% if is_child_page %}child-page{% endif %}"> <!-- Adds a child-page class only when the current page is a child page -->
+
+  <main class="page"> <!-- Wraps the main visible content of the page -->
+
+    <header> <!-- Contains the page heading -->
+
+      <h1>{{ page_title }}</h1> <!-- Shows the title for the current page -->
+
     </header>
-    <div class="hero" style="background-image: url('{{ hero_image_url }}');" aria-label="School background image"></div>
-    <nav>
-      {% for label, target in nav %}
-      <a href="{{ url_for('render_page', page=target) }}" class="{% if current_page == target %}active{% endif %}">{{ label }}</a>
-      {% endfor %}
+
+    <div class="hero" style="background-image: url('{{ hero_image_url }}');" aria-label="School background image"></div> <!-- Displays the hero background image for the page -->
+
+    <nav> <!-- Starts the navigation menu -->
+
+      {% for label, target in nav %} <!-- Loops through each navigation item passed from Flask -->
+
+      <a href="{{ url_for('render_page', page=target) }}" class="{% if current_page == target %}active{% endif %}">{{ label }}</a> <!-- Creates a navigation link and marks it active if it is the current page -->
+
+      {% endfor %} <!-- Ends the navigation loop -->
+
     </nav>
-    {% block content %}{% endblock %}
-    <section class="page-controls">
-      <a href="javascript:history.back()">Previous page</a>
-      <a href="javascript:history.forward()">Next page</a>
-      <a href="{{ url_for('render_page', page=home_target) }}">Home</a>
+
+    {% block content %}{% endblock %} <!-- This is where each child template adds its own page content -->
+
+    <section class="page-controls"> <!-- Holds the basic page movement buttons -->
+
+      <a href="javascript:history.back()">Previous page</a> <!-- Sends the user back to the previous browser page -->
+
+      <a href="javascript:history.forward()">Next page</a> <!-- Sends the user forward in the browser history -->
+
+      <a href="{{ url_for('render_page', page=home_target) }}">Home</a> <!-- Links back to the home page -->
+
     </section>
-    <footer>Community History Research by Ray Greenhough</footer>
+
+    <footer>Community History Research by Ray Greenhough</footer> <!-- Shows the footer text at the bottom of the page -->
+
   </main>
 
-  <!-- Global media viewer so PDF and image links can open inside the page. -->
-  <div id="mediaViewer" class="media-viewer" aria-hidden="true">
-    <div class="media-viewer-backdrop" data-close="true"></div>
-    <section class="media-viewer-dialog" role="dialog" aria-modal="true" aria-label="Document viewer">
-      <header class="media-viewer-header">
-        <h2 id="mediaViewerTitle">Document viewer</h2>
-        <button type="button" id="mediaViewerClose" class="media-viewer-close" aria-label="Close viewer">Close</button>
+  <!-- This viewer is used to open images and PDFs without leaving the current page -->
+  <div id="mediaViewer" class="media-viewer" aria-hidden="true"> <!-- Main hidden media viewer container -->
+
+    <div class="media-viewer-backdrop" data-close="true"></div> <!-- Dark background area that can be clicked to close the viewer -->
+
+    <section class="media-viewer-dialog" role="dialog" aria-modal="true" aria-label="Document viewer"> <!-- Popup box used to display the selected file -->
+
+      <header class="media-viewer-header"> <!-- Header area inside the media viewer -->
+
+        <h2 id="mediaViewerTitle">Document viewer</h2> <!-- Title shown at the top of the viewer -->
+
+        <button type="button" id="mediaViewerClose" class="media-viewer-close" aria-label="Close viewer">Close</button> <!-- Button for closing the media viewer -->
+
       </header>
-      <div class="media-viewer-body">
-        <img id="mediaViewerImage" alt="Selected source image" hidden>
-        <iframe id="mediaViewerFrame" title="Selected source file" hidden></iframe>
+
+      <div class="media-viewer-body"> <!-- Main area where the selected image or PDF appears -->
+
+        <img id="mediaViewerImage" alt="Selected source image" hidden> <!-- Image element used when the selected file is an image -->
+
+        <iframe id="mediaViewerFrame" title="Selected source file" hidden></iframe> <!-- Iframe used when the selected file is a PDF or document -->
+
       </div>
-      <footer class="media-viewer-footer">
-        <button type="button" id="mediaViewerPrev" class="media-viewer-nav">Previous</button>
-        <button type="button" id="mediaViewerNext" class="media-viewer-nav">Next</button>
-        <button type="button" id="mediaViewerHome" class="media-viewer-nav" data-home-url="{{ url_for('render_page', page=viewer_home_target) }}">Home</button>
+
+      <footer class="media-viewer-footer"> <!-- Bottom controls for the media viewer -->
+
+        <button type="button" id="mediaViewerPrev" class="media-viewer-nav">Previous</button> <!-- Moves to the previous media item -->
+
+        <button type="button" id="mediaViewerNext" class="media-viewer-nav">Next</button> <!-- Moves to the next media item -->
+
+        <button type="button" id="mediaViewerHome" class="media-viewer-nav" data-home-url="{{ url_for('render_page', page=viewer_home_target) }}">Home</button> <!-- Takes the user back to the viewer home page -->
+
       </footer>
+
     </section>
+
   </div>
 
-  <script src="{{ url_for('static', filename='js/media-viewer.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/media-viewer.js') }}"></script> <!-- Loads the JavaScript file that controls the media viewer -->
+
 </body>
+
 </html>
