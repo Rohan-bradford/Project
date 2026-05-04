@@ -1,5 +1,4 @@
-# File: app.py
-# This file runs the Flask app, loads page templates, and handles database actions.
+# PURPOSE: Flask application routes, page rendering, and database actions.
 from pathlib import Path
 import sqlite3
 from flask import Flask, redirect, render_template, request, send_from_directory, url_for
