@@ -85,7 +85,7 @@
           <td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td><td>{{ r[4] }}</td>
           <td>
             {% if r[5] %}
-            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">Open</a>
+            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank" data-no-viewer>Open</a>
             {% else %}
             No file linked yet
             {% endif %}
