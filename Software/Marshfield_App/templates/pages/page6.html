@@ -2,277 +2,136 @@
 <!-- This page template holds the sources database search and add record page. -->
 {% extends "base.html" %}
 {% block content %}
-<!-- Main container for the page layout -->
 <div class="content-grid">
-
-  <!-- this contains the Sources database interface -->
-  <!-- grid-column: 1 / -1 tomake width longer-->
   <section class="panel db-panel" style="grid-column: 1 / -1;">
-
- 
     <h2 class="db-title">Sources Database - Available Historical Sources</h2>
 
-    <!-- Show confirmation message when a source record is successfully added -->
     {% if status == "added" %}
     <p class="status-ok">Source record added successfully.</p>
-
-    <!-- Show warning message if the required source name field was missing -->
     {% elif status == "missing" %}
     <p class="status-warn">Source Name is required to add a source record.</p>
     {% endif %}
 
-
-
-    <!-- GET method is used so the filters appear in the URL -->
     <form method="get" action="{{ url_for('render_page', page='page6') }}" class="search-panel">
-
       <h3>Search Sources</h3>
-
-      <!-- Container that holds all search filter fields -->
       <div class="form-row">
-
-
+        <div class="field">
+          <label>Source Name</label>
+          <input type="text" name="source" placeholder="e.g. Logbook" value="{{ filters.source }}">
+        </div>
         <div class="field">
           <label>School</label>
           <select name="school">
-
-            <!-- Default option shows sources from all schools -->
             <option value="">All Schools</option>
-
-            <!-- Loop through schools list provided by backend -->
             {% for s in schools %}
-
-            <!-- Keep previously selected value if user already searched -->
-            <option value="{{ s }}" {% if filters.school == s %}selected{% endif %}>
-              {{ s }}
-            </option>
-
+            <option value="{{ s }}" {% if filters.school == s %}selected{% endif %}>{{ s }}</option>
             {% endfor %}
           </select>
         </div>
-
-
-        <!-- Dropdown filter for type of historical source -->
         <div class="field">
           <label>Source Type</label>
           <select name="source_type">
-
             <option value="">All Source Types</option>
-
-            <!-- Loop through all available source types -->
             {% for t in source_types %}
-
-            <!-- Preserve selected option after search -->
-            <option value="{{ t }}" {% if filters.source_type == t %}selected{% endif %}>
-              {{ t }}
-            </option>
-
+            <option value="{{ t }}" {% if filters.source_type == t %}selected{% endif %}>{{ t }}</option>
             {% endfor %}
           </select>
         </div>
-
+        <div class="field">
+          <label>Department</label>
+          <select name="department">
+            <option value="">All Departments</option>
+            {% for d in departments %}
+            <option value="{{ d }}" {% if filters.department == d %}selected{% endif %}>{{ d }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label>Notes</label>
+          <input type="text" name="notes" placeholder="search notes" value="{{ filters.notes }}">
+        </div>
+        <div class="field">
+          <label>Hyperlink</label>
+          <input type="text" name="hyperlink" placeholder="search file path" value="{{ filters.hyperlink }}">
+        </div>
       </div>
-
-
       <div class="search-actions">
-
-        <!-- Submits the search form -->
         <button type="submit" class="btn-primary">Search</button>
-
-        <!-- Clears search filters by reloading the page -->
         <a href="{{ url_for('render_page', page='page6') }}" class="btn-muted">Clear</a>
-
       </div>
-
     </form>
 
-
-
     <div class="db-toolbar">
-
-      <!-- Button that opens the modal form for adding a new source -->
-      <button type="button" class="btn-add" onclick="openSourceModal()">
-        + Add New Source Record
-      </button>
-
-
+      <button type="button" class="btn-add" onclick="openSourceModal()">+ Add New Source Record</button>
       <span>Showing {{ rows|length }} source(s)</span>
-
     </div>
 
-
-    <!-- Table that displays all source records -->
     <table class="db-table">
-
-
       <thead>
         <tr>
-          <th>Source</th>
-          <th>Source type</th>
-          <th>School</th>
-          <th>Department</th>
-          <th>Notes</th>
-          <th>Hyperlink</th>
+          <th>Source</th><th>Source type</th><th>School</th><th>Department</th><th>Notes</th><th>Hyperlink</th>
         </tr>
       </thead>
-
       <tbody>
-
-        <!-- Loop through rows returned from the database -->
         {% for r in rows %}
-
         <tr>
-
-       
           <td>
-
-            <!-- If a file path exists, make the source name clickable -->
             {% if r[5] %}
-
-      
-            <!-- lstrip removes any leading slash so the path always stay  relative -->
-            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">
-              {{ r[0] }}
-            </a>
-
+            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">{{ r[0] }}</a>
             {% else %}
-
-            <!-- If no file exists, just show the source name as text -->
             {{ r[0] }}
-
             {% endif %}
           </td>
-
-     
-          <td>{{ r[1] }}</td> 
-          <td>{{ r[2] }}</td> 
-          <td>{{ r[3] }}</td> 
-          <td>{{ r[4] }}</td> 
-
-
-        
+          <td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td><td>{{ r[4] }}</td>
           <td>
-
-          
             {% if r[5] %}
-
-            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">
-              Open
-            </a>
-
+            <a href="/{{ r[5].replace(' ', '%20').lstrip('/') }}" target="_blank">Open</a>
             {% else %}
-
-            <!-- Message shown if no file has been linked yet -->
             No file linked yet
-
             {% endif %}
           </td>
-
         </tr>
-
         {% else %}
-
-        <!-- Message shown when no records match the search -->
-        <tr>
-          <td colspan="6">No records found.</td>
-        </tr>
-
+        <tr><td colspan="6">No records found.</td></tr>
         {% endfor %}
-
       </tbody>
     </table>
 
-
-    <!-- Clicking outside the modal triggers the close function -->
     <div id="sourceModal" class="modal-backdrop" onclick="closeSourceModal(event)">
-
-      <!-- Card container for the modal form -->
       <div class="modal-card">
-
         <h3>Add New Source Record</h3>
-
-        <!-- Form sends POST request to backend route that inserts the record -->
         <form method="post" action="{{ url_for('add_source_record') }}" class="modal-form">
-
-          <!-- Input for source name (required field) -->
-          <div class="field">
-            <label>Source Name</label>
-            <input type="text" name="source" required>
-          </div>
-
-          <!-- Dropdown for selecting the source type -->
+          <div class="field"><label>Source Name</label><input type="text" name="source" required></div>
           <div class="field">
             <label>Source Type</label>
             <select name="source_type">
               <option value="">Select type...</option>
-
-              <!-- Populate dropdown with source types from backend -->
               {% for t in source_types %}
               <option value="{{ t }}">{{ t }}</option>
               {% endfor %}
-
             </select>
           </div>
-
-          <!-- Optional fields for additional source information -->
           <div class="field"><label>School</label><input type="text" name="school"></div>
           <div class="field"><label>Department</label><input type="text" name="department"></div>
-
-          <!-- Notes field for any extra details about the source -->
-          <div class="field">
-            <label>Notes</label>
-            <textarea name="notes" rows="3"></textarea>
-          </div>
-
-          <!-- File path or hyperlink pointing to stored document -->
-          <div class="field">
-            <label>File Path / Hyperlink</label>
-            <input type="text" name="hyperlink"
-                   placeholder="Images/Log books/Infant_1877 -1905.pdf">
-          </div>
-
-
-          <!-- Buttons inside the modal -->
+          <div class="field"><label>Notes</label><textarea name="notes" rows="3"></textarea></div>
+          <div class="field"><label>File Path / Hyperlink</label><input type="text" name="hyperlink" placeholder="Images/Log books/Infant_1877 -1905.pdf"></div>
           <div class="modal-actions">
-
-            <!-- Cancel button closes the modal -->
-            <button type="button" class="btn-muted" onclick="closeSourceModal()">
-              Cancel
-            </button>
-
-            <!-- Submits the form and saves the new source record -->
-            <button type="submit" class="btn-save">
-              Save Record
-            </button>
-
+            <button type="button" class="btn-muted" onclick="closeSourceModal()">Cancel</button>
+            <button type="submit" class="btn-save">Save Record</button>
           </div>
-
         </form>
       </div>
     </div>
-
   </section>
 </div>
-
-
 <script>
-
- 
-  
   function openSourceModal() {
     document.getElementById("sourceModal").classList.add("show");
   }
-
-
-  // If the user clicks outside the modal card, it hides the popup
   function closeSourceModal(evt) {
-
     if (!evt || evt.target.id === "sourceModal") {
-
       document.getElementById("sourceModal").classList.remove("show");
-
     }
   }
-
 </script>
 {% endblock %}
