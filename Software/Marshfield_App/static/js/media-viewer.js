@@ -66,6 +66,14 @@
     return imageExtensions.includes(ext) || frameExtensions.includes(ext);
   }
 
+  function resolvedHref(anchor) {
+    try {
+      return new URL(anchor.getAttribute("href"), window.location.href).href;
+    } catch (error) {
+      return "";
+    }
+  }
+
   function collectMediaLinks() {
     return Array.from(document.querySelectorAll("a[href]")).filter(isMediaLink);
   }
