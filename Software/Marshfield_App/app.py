@@ -1,4 +1,5 @@
-# PURPOSE: Flask application routes, page rendering, and database actions.
+# File: app.py
+# This file runs the Flask app, loads page templates, and handles database actions.
 from pathlib import Path
 import sqlite3
 from flask import Flask, redirect, render_template, request, send_from_directory, url_for
@@ -62,6 +63,17 @@ def title_for_page(page):
     return "Marshfield School"
 
 
+def viewer_home_for_page(page):
+    # Viewer Home should return child pages to their parent section.
+    if page == "page1a":
+        return "page1"
+    if page == "page3a":
+        return "page3"
+    if page.startswith("page4") and page != "page4":
+        return "page4"
+    return page
+
+
 def fetch_staff(filters):
     query = """
     SELECT school_name, dept, title, last_name, first_name, position, address, start_year, left_year, notes
@@ -99,11 +111,17 @@ def fetch_sources(filters):
     WHERE 1=1
     """
     params = []
-    for key, column in [("school", "school"), ("source_type", "source_type")]:
+    for key, column in [("school", "school"), ("source_type", "source_type"), ("department", "department")]:
         value = filters.get(key)
         if value:
             query += f" AND {column} = ?"
             params.append(value)
+
+    for key, column in [("source", "source"), ("notes", "notes"), ("hyperlink", "hyperlink")]:
+        value = filters.get(key)
+        if value:
+            query += f" AND LOWER({column}) LIKE LOWER(?)"
+            params.append(f"%{value}%")
 
     query += " ORDER BY school, source_type, source"
 
@@ -211,6 +229,7 @@ def render_page(page):
     page_title = title_for_page(page)
     is_child_page = page in CHILD_PAGES
     home_target = page if is_child_page else "page1"
+    viewer_home_target = viewer_home_for_page(page)
 
     if page == "page5":
         filters = {
@@ -233,6 +252,7 @@ def render_page(page):
             page_title=page_title,
             is_child_page=is_child_page,
             home_target=home_target,
+            viewer_home_target=viewer_home_target,
             filters=filters,
             rows=rows,
             schools=schools,
@@ -243,13 +263,18 @@ def render_page(page):
 
     if page == "page6":
         filters = {
+            "source": request.args.get("source", ""),
             "school": request.args.get("school", ""),
             "source_type": request.args.get("source_type", ""),
+            "department": request.args.get("department", ""),
+            "notes": request.args.get("notes", ""),
+            "hyperlink": request.args.get("hyperlink", ""),
         }
         rows = fetch_sources(filters)
         with sqlite3.connect(SOURCES_DB) as conn:
             schools = [r[0] for r in conn.execute("SELECT DISTINCT school FROM sources WHERE school IS NOT NULL AND TRIM(school) <> '' ORDER BY school")]
             source_types = [r[0] for r in conn.execute("SELECT DISTINCT source_type FROM sources WHERE source_type IS NOT NULL AND TRIM(source_type) <> '' ORDER BY source_type")]
+            departments = [r[0] for r in conn.execute("SELECT DISTINCT department FROM sources WHERE department IS NOT NULL AND TRIM(department) <> '' ORDER BY department")]
         return render_template(
             "pages/page6.html",
             nav=NAV,
@@ -258,10 +283,12 @@ def render_page(page):
             page_title=page_title,
             is_child_page=is_child_page,
             home_target=home_target,
+            viewer_home_target=viewer_home_target,
             filters=filters,
             rows=rows,
             schools=schools,
             source_types=source_types,
+            departments=departments,
             status=request.args.get("status", ""),
         )
 
@@ -273,6 +300,7 @@ def render_page(page):
         page_title=page_title,
         is_child_page=is_child_page,
         home_target=home_target,
+        viewer_home_target=viewer_home_target,
     )
 
 
