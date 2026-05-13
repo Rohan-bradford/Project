@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!-- File: instruction_manual.html -->
 <!-- This is the styled instruction manual for running and maintaining the app. -->
@@ -206,10 +205,14 @@
         <li>Install dependencies:
           <pre><code>pip install -r requirements.txt</code></pre>
         </li>
-        <li>Run app:
-          <pre><code>python -m flask --app app run --debug</code></pre>
+        <li><strong>Create desktop shortcut (run this before starting the server):</strong>
+          <pre><code>.\install_desktop_shortcut.bat</code></pre>
         </li>
-        <li>Open <code>http://127.0.0.1:5000/</code></li>
+        <li>Launch the app by double-clicking the desktop icon <strong>Marshfield School History</strong>.</li>
+        <li>If you do not want to use the desktop icon, you can run manually instead:
+          <pre><code>python -m flask --app app run --debug</code></pre>
+          then open <code>http://127.0.0.1:5000/</code>.
+        </li>
       </ol>
 
       <div class="note">
@@ -221,13 +224,13 @@
         creating the virtual environment, installing packages, or writing to protected folders.
       </div>
 
-      <h3>Optional one-click desktop icon setup (recommended)</h3>
+      <h3>Desktop icon setup (recommended)</h3>
       <ol>
-        <li>After completing the normal setup above, run this file once:
+        <li>Run this once after <code>pip install -r requirements.txt</code> and <strong>before</strong> starting the server:
           <pre><code>install_desktop_shortcut.bat</code></pre>
         </li>
         <li>This creates a desktop icon called <strong>Marshfield School History</strong>.</li>
-        <li>From next time onward, just double-click that desktop icon to open the app. No Python command is needed.</li>
+        <li>From next time onward, just double-click that desktop icon to open the app. No manual Python command is needed.</li>
       </ol>
 
       <div class="note">
@@ -302,7 +305,7 @@ python import_excel_data.py</code></pre>
 
       <h2 id="s11">11) Sources database page (Page 6)</h2>
       <ul>
-        <li>Search by school and source type.</li>
+        <li>Search by source name, school, source type, department, notes, and hyperlink.</li>
         <li>Use <strong>+ Add New Source Record</strong> to insert a record.</li>
         <li>Required field to add: <code>Source Name</code>.</li>
         <li>For file links, enter relative path like <code>Images/...</code>.</li>
